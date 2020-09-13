@@ -1,4 +1,5 @@
 == New Features in JDK 15
+:sourcedir: ../src/main/java/net/bakaar/jdk/demo
 
 === Text Blocks
 
@@ -10,21 +11,86 @@
 * you can use `"""` inside a text block by escaping the at least one `"` (ex: `\"""`)
 * you can add text block by using `+`
 
+Example code with String :
+
+[source,java,indent=0]
+----
+include::{sourcedir}/TextBlock.java[lines=6..10]
+----
+
+Example code with TextBlock :
+
+[source,java,indent=0]
+----
+include::{sourcedir}/TextBlock.java[lines=15..21]
+----
+
+==== NOTES
+
+* IntelliJ show the final indentation
+* More examples here : https://openjdk.java.net/jeps/378
+
 === Records (second preview)
 
 * added in jdk 14
 * Data class => immutable
 * add possibility to declare a record locally
 * allow annotation on fields in the constructor
+* can override automatically generated method
+* can add new methods
+
+Example :
+
+[source,java,indent=0]
+----
+include::{sourcedir}/Person.java[lines=6..11]
+----
 
 === Pattern Matching instanceof (second preview)
 
 * added in jdk 14
-* direct cast
+* direct cast (remove the need of an explicit cast after the `if` statement)
+
+Code example before :
+
+[source,java,indent=0]
+----
+include::{sourcedir}/PatternMatchingInstanceOf.java[lines=6..9]
+----
+
+Code example after :
+
+[source,java,indent=0]
+----
+include::{sourcedir}/PatternMatchingInstanceOf.java[lines=13..15]
+----
+
+==== NOTES
+
+* Valid only in the `true` block of an `if else` declaration
 
 === Sealed Types (preview)
 
 * prevent class extension but not superclass usage
 * extension is limited to a bunch of selected/declared classes
 * works for interfaces too
+
+Base Class :
+
+[source,java,indent=0]
+----
+include::{sourcedir}/hidden/Shape.java[lines=3..7]
+----
+
+Extending Class :
+
+[source,java,indent=0]
+----
+include::{sourcedir}/hidden/Circle.java[lines=4..5]
+----
+
+==== NOTES
+
+* the extending class need to be final (logical !)
+* More info here : https://openjdk.java.net/jeps/360
 

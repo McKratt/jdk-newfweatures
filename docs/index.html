@@ -575,14 +575,86 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>can return a value</p>
 </li>
-<li>
-<p>if multiple statement then use <code>yield</code> keyword to return value</p>
-</li>
-<li>
-<p>if arrow operator is not use, <code>yield</code> keyword act as return (+ break)</p>
-</li>
+    <li>
+        <p>if multiple statement then use <code>yield</code> keyword to return value</p>
+    </li>
+    <li>
+        <p>if arrow operator is not use, <code>yield</code> keyword act as return (+ break)</p>
+    </li>
 </ul>
 </div>
+    <div class="paragraph">
+        <p>Code example before :</p>
+    </div>
+    <div class="listingblock">
+        <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">switch</span> (day) {
+    <span style="color:#080;font-weight:bold">case</span> MONDAY:
+    <span style="color:#080;font-weight:bold">case</span> FRIDAY:
+    <span style="color:#080;font-weight:bold">case</span> SUNDAY:
+        <span style="color:#0a8;font-weight:bold">System</span>.out.println(<span style="color:#00D">6</span>);
+        <span style="color:#080;font-weight:bold">break</span>;
+    <span style="color:#080;font-weight:bold">case</span> TUESDAY:
+        <span style="color:#0a8;font-weight:bold">System</span>.out.println(<span style="color:#00D">7</span>);
+        <span style="color:#080;font-weight:bold">break</span>;
+    <span style="color:#080;font-weight:bold">case</span> THURSDAY:
+    <span style="color:#080;font-weight:bold">case</span> SATURDAY:
+        <span style="color:#0a8;font-weight:bold">System</span>.out.println(<span style="color:#00D">8</span>);
+        <span style="color:#080;font-weight:bold">break</span>;
+    <span style="color:#080;font-weight:bold">case</span> WEDNESDAY:
+        <span style="color:#0a8;font-weight:bold">System</span>.out.println(<span style="color:#00D">9</span>);
+        <span style="color:#080;font-weight:bold">break</span>;
+}</code></pre>
+        </div>
+    </div>
+    <div class="paragraph">
+        <p>Code example with yield:</p>
+    </div>
+    <div class="listingblock">
+        <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#0a8;font-weight:bold">System</span>.out.println(<span
+        style="color:#080;font-weight:bold">switch</span> (day) {
+    <span style="color:#080;font-weight:bold">case</span> MONDAY:
+    <span style="color:#080;font-weight:bold">case</span> FRIDAY:
+    <span style="color:#080;font-weight:bold">case</span> SUNDAY:
+        yield <span style="color:#00D">6</span>;
+    <span style="color:#080;font-weight:bold">case</span> TUESDAY:
+        yield <span style="color:#00D">7</span>;
+    <span style="color:#080;font-weight:bold">case</span> THURSDAY:
+    <span style="color:#080;font-weight:bold">case</span> SATURDAY:
+        yield <span style="color:#00D">8</span>;
+    <span style="color:#080;font-weight:bold">case</span> WEDNESDAY:
+        yield <span style="color:#00D">9</span>;
+});</code></pre>
+        </div>
+    </div>
+    <div class="paragraph">
+        <p>Code example with <code>&#8594;</code> operator:</p>
+    </div>
+    <div class="listingblock">
+        <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#0a8;font-weight:bold">System</span>.out.println(<span
+        style="color:#080;font-weight:bold">switch</span> (day) {
+    <span style="color:#080;font-weight:bold">case</span> MONDAY, FRIDAY, SUNDAY -&gt; <span style="color:#00D">6</span>;
+    <span style="color:#080;font-weight:bold">case</span> TUESDAY -&gt; <span style="color:#00D">7</span>;
+    <span style="color:#080;font-weight:bold">case</span> THURSDAY, SATURDAY -&gt; <span style="color:#00D">8</span>;
+    <span style="color:#080;font-weight:bold">case</span> WEDNESDAY -&gt; <span style="color:#00D">9</span>;
+});</code></pre>
+        </div>
+    </div>
+    <div class="sect3">
+        <h4 id="_notes_2">Notes</h4>
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p>you cannot mix <code>yield</code> and the <code>&#8594;</code> operator</p>
+                </li>
+                <li>
+                    <p>if you need to write more than one statement per value, you have to use <code>yield</code></p>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 </div>
 </div>
@@ -606,16 +678,70 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>consider only space after the first character of the first line BUT the closing delimiter can change that if you put it before the first character.</p>
 </li>
 <li>
-<p>you can use <code>"</code> and <code>""</code> inside the text block</p>
+    <p>you can use <code>"</code> and <code>""</code> inside the text block</p>
 </li>
-<li>
-<p>you can use <code>"""</code> inside a text block by escaping the at least one <code>"</code> (ex: <code>\"""</code>)</p>
-</li>
-<li>
-<p>you can add text block by using <code>+</code></p>
-</li>
+    <li>
+        <p>you can use <code>"""</code> inside a text block by escaping the at least one <code>"</code> (ex:
+            <code>\"""</code>)</p>
+    </li>
+    <li>
+        <p>you can add text block by using <code>+</code></p>
+    </li>
 </ul>
 </div>
+    <div class="paragraph">
+        <p>Example code with String :</p>
+    </div>
+    <div class="listingblock">
+        <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span
+        style="color:#0a8;font-weight:bold">String</span> html = <span
+        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">&lt;html&gt;</span><span
+        style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> +
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                style="color:#D20">    &lt;body&gt;</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> +
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                style="color:#D20">        &lt;p&gt;Hello, world&lt;/p&gt;</span><span style="color:#b0b">\n</span><span
+                style="color:#710">&quot;</span></span> +
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                style="color:#D20">    &lt;/body&gt;</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> +
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                style="color:#D20">&lt;/html&gt;</span><span style="color:#b0b">\n</span><span
+                style="color:#710">&quot;</span></span>;</code></pre>
+        </div>
+    </div>
+    <div class="paragraph">
+        <p>Example code with TextBlock :</p>
+    </div>
+    <div class="listingblock">
+        <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span
+        style="color:#0a8;font-weight:bold">String</span> html = <span
+        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span><span
+        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">
+      &lt;html&gt;
+          &lt;body&gt;
+              &lt;p&gt;Hello, world&lt;/p&gt;
+          &lt;/body&gt;
+      &lt;/html&gt;
+      </span><span style="color:#710">&quot;</span></span><span style="background-color:hsla(0,100%,50%,0.05)"><span
+        style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>;</code></pre>
+        </div>
+    </div>
+    <div class="sect3">
+        <h4 id="_notes_3">NOTES</h4>
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p>IntelliJ show the final indentation</p>
+                </li>
+                <li>
+                    <p>More examples here : <a class="bare" href="https://openjdk.java.net/jeps/378">https://openjdk.java.net/jeps/378</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 <div class="sect2">
 <h3 id="_records_second_preview">Records (second preview)</h3>
@@ -624,53 +750,146 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>added in jdk 14</p>
 </li>
-<li>
-<p>Data class &#8658; immutable</p>
-</li>
-<li>
-<p>add possibility to declare a record locally</p>
-</li>
-<li>
-<p>allow annotation on fields in the constructor</p>
-</li>
+    <li>
+        <p>Data class &#8658; immutable</p>
+    </li>
+    <li>
+        <p>add possibility to declare a record locally</p>
+    </li>
+    <li>
+        <p>allow annotation on fields in the constructor</p>
+    </li>
+    <li>
+        <p>can override automatically generated method</p>
+    </li>
+    <li>
+        <p>can add new methods</p>
+    </li>
 </ul>
 </div>
+    <div class="paragraph">
+        <p>Example :</p>
+    </div>
+    <div class="listingblock">
+        <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">public</span> record Person(<span
+        style="color:#0a8;font-weight:bold">String</span> name, <span style="color:#0a8;font-weight:bold">String</span> surname, LocalDate birthday) {
+
+    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">int</span> calculateAge(LocalDate today){
+        <span style="color:#080;font-weight:bold">return</span> Period.between(birthday, today).getYears();
+    }
+}</code></pre>
+        </div>
+    </div>
 </div>
-<div class="sect2">
-<h3 id="_pattern_matching_instanceof_second_preview">Pattern Matching instanceof (second preview)</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>added in jdk 14</p>
-</li>
-<li>
-<p>direct cast</p>
-</li>
-</ul>
-</div>
-</div>
+    <div class="sect2">
+        <h3 id="_pattern_matching_instanceof_second_preview">Pattern Matching instanceof (second preview)</h3>
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p>added in jdk 14</p>
+                </li>
+                <li>
+                    <p>direct cast (remove the need of an explicit cast after the <code>if</code> statement)</p>
+                </li>
+            </ul>
+        </div>
+        <div class="paragraph">
+            <p>Code example before :</p>
+        </div>
+        <div class="listingblock">
+            <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">if</span> (obj <span
+        style="color:#080;font-weight:bold">instanceof</span> <span style="color:#0a8;font-weight:bold">String</span>) {
+    <span style="color:#0a8;font-weight:bold">String</span> s = (<span style="color:#0a8;font-weight:bold">String</span>) obj;
+    <span style="color:#0a8;font-weight:bold">System</span>.out.println(s.length());
+}</code></pre>
+            </div>
+        </div>
+        <div class="paragraph">
+            <p>Code example after :</p>
+        </div>
+        <div class="listingblock">
+            <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">if</span> (obj <span
+        style="color:#080;font-weight:bold">instanceof</span> <span style="color:#0a8;font-weight:bold">String</span> s){
+    <span style="color:#0a8;font-weight:bold">System</span>.out.println(s.length());
+}</code></pre>
+            </div>
+        </div>
+        <div class="sect3">
+            <h4 id="_notes_4">NOTES</h4>
+            <div class="ulist">
+                <ul>
+                    <li>
+                        <p>Valid only in the <code>true</code> block of an <code>if else</code> declaration</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 <div class="sect2">
 <h3 id="_sealed_types_preview">Sealed Types (preview)</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>prevent class extension but not superclass usage</p>
+    <p>prevent class extension but not superclass usage</p>
 </li>
-<li>
-<p>extension is limited to a bunch of selected/declared classes</p>
-</li>
-<li>
-<p>works for interfaces too</p>
-</li>
+    <li>
+        <p>extension is limited to a bunch of selected/declared classes</p>
+    </li>
+    <li>
+        <p>works for interfaces too</p>
+    </li>
 </ul>
 </div>
+    <div class="paragraph">
+        <p>Base Class :</p>
+    </div>
+    <div class="listingblock">
+        <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">public</span> <span
+        style="color:#088;font-weight:bold">abstract</span> sealed <span
+        style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Shape</span>
+        permits net.bakaar.jdk.demo.hidden.Circle
+        {
+
+}</code></pre>
+        </div>
+    </div>
+    <div class="paragraph">
+        <p>Extending Class :</p>
+    </div>
+    <div class="listingblock">
+        <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">public</span> <span
+        style="color:#088;font-weight:bold">final</span> <span style="color:#339;font-weight:bold">class</span> <span
+        style="color:#B06;font-weight:bold">Circle</span> <span style="color:#088;font-weight:bold">extends</span> <span
+        style="color:#0a8;font-weight:bold">Shape</span> {
+}</code></pre>
+        </div>
+    </div>
+    <div class="sect3">
+        <h4 id="_notes_5">NOTES</h4>
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p>the extending class need to be final (logical !)</p>
+                </li>
+                <li>
+                    <p>More info here : <a class="bare" href="https://openjdk.java.net/jeps/360">https://openjdk.java.net/jeps/360</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-09-13 09:54:30 +0200
+    Last updated 2020-09-13 16:40:35 +0200
 </div>
 </div>
 </body>
