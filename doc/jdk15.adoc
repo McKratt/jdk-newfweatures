@@ -1,0 +1,30 @@
+== New Features in JDK 15
+
+=== Text Blocks
+
+* added in jdk 13
+* express a multiline String
+* take attention of the position of final `"""`, the last carriage return count
+* consider only space after the first character of the first line BUT the closing delimiter can change that if you put it before the first character.
+* you can use `"` and `""` inside the text block
+* you can use `"""` inside a text block by escaping the at least one `"` (ex: `\"""`)
+* you can add text block by using `+`
+
+=== Records (second preview)
+
+* added in jdk 14
+* Data class => immutable
+* add possibility to declare a record locally
+* allow annotation on fields in the constructor
+
+=== Pattern Matching instanceof (second preview)
+
+* added in jdk 14
+* direct cast
+
+=== Sealed Types (preview)
+
+* prevent class extension but not superclass usage
+* extension is limited to a bunch of selected/declared classes
+* works for interfaces too
+

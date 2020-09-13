@@ -1,0 +1,50 @@
+== New Features in JDK 14
+:sourcedir: ../src/main/java/net/bakaar/jdk/demo
+
+=== Clear NullPointerException
+
+* Add clearer message when chained method call
+
+....
+a.b.c.i = 99 => will throw this error if b is null :
+-> Exception in thread "main" java.lang.NullPointerException:
+   Cannot read field "c" because "a.b" is null at Prog.main(Prog.java:5)
+....
+
+=== Records (preview)
+
+see jdk 15
+
+=== Pattern Matching instanceof (preview)
+
+see jdk 15
+
+=== Switch expression (preview)
+
+* added in jdk 12
+* `->` operator, no need of `break;` anymore
+* can return a value
+* if multiple statement then use `yield` keyword to return value
+* if arrow operator is not use, `yield` keyword act as return (+ break)
+
+Code example before :
+[source,java,indent=0]
+----
+include::{sourcedir}/Switch.java[lines=8..24]
+----
+
+Code example with yield:
+[source,java,indent=0]
+----
+include::{sourcedir}/Switch.java[lines=28..40]
+----
+
+Code example with `->` operator:
+[source,java,indent=0]
+----
+include::{sourcedir}/Switch.java[lines=42..47]
+----
+
+==== Notes
+* you cannot mix `yield` and the `->` operator
+* if you need to write more than one statement per value, you have to use `yield`

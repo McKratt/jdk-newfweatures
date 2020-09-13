@@ -1,0 +1,25 @@
+== New Feature in JDK 11
+:sourcedir: ../src/main/java/net/bakaar/jdk/demo
+
+
+=== Local Variable (var) for lambda
+
+* added in Jdk 10
+* type inference
+* usable in lambda expression
+
+Code example before jdk 11 :
+[source,java,indent=0]
+----
+include::{sourcedir}/LocalVar.java[lines=8..14]
+----
+Same Code with local variable:
+[source,java, indent=0]
+----
+include::{sourcedir}/LocalVar.java[lines=15..20]
+----
+
+==== Notes
+* The use of local variable as parameter of the method is not allowed. It works only for lambda.
+* `var myList;` doesn't work because there is no type to infer here.
+* **Warning !** it can hide the actual type if name of the variable not adequate, ex : `var x = getX();`. It is correct in term of compilation but for the reader it hides the actual type of x.
