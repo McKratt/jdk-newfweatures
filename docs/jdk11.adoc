@@ -3,7 +3,7 @@
 
 === Convenience Factory Methods for Collections
 
-* adde in Jdk 9
+* added in Jdk 9
 * allow to build collection from Array with simple methods
 * Created Collection are immutables
 

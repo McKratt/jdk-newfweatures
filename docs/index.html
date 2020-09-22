@@ -471,26 +471,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_new_feature_in_jdk_11">New Feature in JDK 11</h2>
 <div class="sectionbody">
-    <div class="sect2">
-        <h3 id="_convenience_factory_methods_for_collections">Convenience Factory Methods for Collections</h3>
-        <div class="ulist">
-            <ul>
-                <li>
-                    <p>adde in Jdk 9</p>
-                </li>
-                <li>
-                    <p>allow to build collection from Array with simple methods</p>
-                </li>
-                <li>
-                    <p>Created Collection are immutables</p>
-                </li>
-            </ul>
-        </div>
-        <div class="paragraph">
-            <p>Code example before:</p>
-        </div>
-        <div class="listingblock">
-            <div class="content">
+<div class="sect2">
+    <h3 id="_convenience_factory_methods_for_collections">Convenience Factory Methods for Collections</h3>
+    <div class="ulist">
+        <ul>
+            <li>
+                <p>added in Jdk 9</p>
+            </li>
+            <li>
+                <p>allow to build collection from Array with simple methods</p>
+            </li>
+            <li>
+                <p>Created Collection are immutables</p>
+            </li>
+        </ul>
+    </div>
+    <div class="paragraph">
+        <p>Code example before:</p>
+    </div>
+    <div class="listingblock">
+        <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span style="color:#0a8;font-weight:bold">Set</span>&lt;<span
         style="color:#0a8;font-weight:bold">String</span>&gt; set = <span style="color:#080;font-weight:bold">new</span> <span
         style="color:#0a8;font-weight:bold">HashSet</span>&lt;&gt;();
@@ -501,25 +501,25 @@ set.add(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:
 set.add(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
             style="color:#D20">c</span><span style="color:#710">&quot;</span></span>);
 set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableSet(set);</code></pre>
-            </div>
-        </div>
-        <div class="paragraph">
-            <p>Code example after:</p>
-        </div>
-        <div class="listingblock">
-            <div class="content">
-                <pre class="CodeRay highlight"><code data-lang="java"><span
-                        style="color:#0a8;font-weight:bold">Set</span>&lt;<span style="color:#0a8;font-weight:bold">String</span>&gt; set = <span
-                        style="color:#0a8;font-weight:bold">Set</span>.of(<span
-                        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
-                        style="color:#D20">a</span><span style="color:#710">&quot;</span></span>, <span
-                        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
-                        style="color:#D20">b</span><span style="color:#710">&quot;</span></span>, <span
-                        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
-                        style="color:#D20">c</span><span style="color:#710">&quot;</span></span>);</code></pre>
-            </div>
         </div>
     </div>
+    <div class="paragraph">
+        <p>Code example after:</p>
+    </div>
+    <div class="listingblock">
+        <div class="content">
+            <pre class="CodeRay highlight"><code data-lang="java"><span style="color:#0a8;font-weight:bold">Set</span>&lt;<span
+                    style="color:#0a8;font-weight:bold">String</span>&gt; set = <span
+                    style="color:#0a8;font-weight:bold">Set</span>.of(<span
+                    style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                    style="color:#D20">a</span><span style="color:#710">&quot;</span></span>, <span
+                    style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                    style="color:#D20">b</span><span style="color:#710">&quot;</span></span>, <span
+                    style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                    style="color:#D20">c</span><span style="color:#710">&quot;</span></span>);</code></pre>
+        </div>
+    </div>
+</div>
 <div class="sect2">
 <h3 id="_local_variable_var_for_lambda">Local Variable (var) for lambda</h3>
 <div class="ulist">
@@ -566,13 +566,14 @@ set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableS
 <div class="ulist">
 <ul>
 <li>
-<p>The use of local variable as parameter of the method is not allowed. It works only for lambda.</p>
+    <p>The use of local variable as parameter of the method is not allowed.It works only for lambda.</p>
 </li>
 <li>
 <p><code>var myList;</code> doesn&#8217;t work because there is no type to infer here.</p>
 </li>
 <li>
-<p><strong>Warning !</strong> it can hide the actual type if name of the variable not adequate, ex : <code>var x = getX();</code>. It is correct in term of compilation but for the reader it hides the actual type of x.</p>
+    <p><strong>Warning !</strong> it can hide the actual type if name of the variable not adequate, ex : <code>var x =
+        getX();</code>.It is correct in term of compilation but for the reader it hides the actual type of x.</p>
 </li>
 </ul>
 </div>
@@ -714,31 +715,31 @@ set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableS
 <div class="sect2">
 <h3 id="_text_blocks">Text Blocks</h3>
 <div class="ulist">
-<ul>
-<li>
-<p>added in jdk 13</p>
-</li>
-<li>
-<p>express a multiline String</p>
-</li>
-    <li>
-        <p>take attention of the position of final <code>"""</code>, the last carriage return count</p>
-    </li>
-    <li>
-        <p>consider only space after the first character of the first line BUT the closing delimiter can change that if
-            you put it before the first character.</p>
-    </li>
-    <li>
-        <p>you can use <code>"</code> and <code>""</code> inside the text block</p>
-    </li>
-    <li>
-        <p>you can use <code>"""</code> inside a text block by escaping the at least one <code>"</code> (ex:
-            <code>\"""</code>)</p>
-    </li>
-    <li>
-        <p>you can add text block by using <code>+</code></p>
-    </li>
-</ul>
+    <ul>
+        <li>
+            <p>added in jdk 13</p>
+        </li>
+        <li>
+            <p>express a multiline String</p>
+        </li>
+        <li>
+            <p>take attention of the position of final <code>"""</code>, the last carriage return count</p>
+        </li>
+        <li>
+            <p>consider only space after the first character of the first line BUT the closing delimiter can change that
+                if you put it before the first character.</p>
+        </li>
+        <li>
+            <p>you can use <code>"</code> and <code>""</code> inside the text block</p>
+        </li>
+        <li>
+            <p>you can use <code>"""</code> inside a text block by escaping the at least one <code>"</code> (ex: <code>\"""</code>)
+            </p>
+        </li>
+        <li>
+            <p>you can add text block by using <code>+</code></p>
+        </li>
+    </ul>
 </div>
     <div class="paragraph">
         <p>Example code with String :</p>
