@@ -444,6 +444,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_new_feature_in_jdk_11">New Feature in JDK 11</a>
 <ul class="sectlevel2">
+<li><a href="#_convenience_factory_methods_for_collections">Convenience Factory Methods for Collections</a></li>
 <li><a href="#_local_variable_var_for_lambda">Local Variable (var) for lambda</a></li>
 </ul>
 </li>
@@ -470,6 +471,55 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_new_feature_in_jdk_11">New Feature in JDK 11</h2>
 <div class="sectionbody">
+    <div class="sect2">
+        <h3 id="_convenience_factory_methods_for_collections">Convenience Factory Methods for Collections</h3>
+        <div class="ulist">
+            <ul>
+                <li>
+                    <p>adde in Jdk 9</p>
+                </li>
+                <li>
+                    <p>allow to build collection from Array with simple methods</p>
+                </li>
+                <li>
+                    <p>Created Collection are immutables</p>
+                </li>
+            </ul>
+        </div>
+        <div class="paragraph">
+            <p>Code example before:</p>
+        </div>
+        <div class="listingblock">
+            <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#0a8;font-weight:bold">Set</span>&lt;<span
+        style="color:#0a8;font-weight:bold">String</span>&gt; set = <span style="color:#080;font-weight:bold">new</span> <span
+        style="color:#0a8;font-weight:bold">HashSet</span>&lt;&gt;();
+set.add(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">a</span><span style="color:#710">&quot;</span></span>);
+set.add(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">b</span><span style="color:#710">&quot;</span></span>);
+set.add(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">c</span><span style="color:#710">&quot;</span></span>);
+set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableSet(set);</code></pre>
+            </div>
+        </div>
+        <div class="paragraph">
+            <p>Code example after:</p>
+        </div>
+        <div class="listingblock">
+            <div class="content">
+                <pre class="CodeRay highlight"><code data-lang="java"><span
+                        style="color:#0a8;font-weight:bold">Set</span>&lt;<span style="color:#0a8;font-weight:bold">String</span>&gt; set = <span
+                        style="color:#0a8;font-weight:bold">Set</span>.of(<span
+                        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                        style="color:#D20">a</span><span style="color:#710">&quot;</span></span>, <span
+                        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                        style="color:#D20">b</span><span style="color:#710">&quot;</span></span>, <span
+                        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                        style="color:#D20">c</span><span style="color:#710">&quot;</span></span>);</code></pre>
+            </div>
+        </div>
+    </div>
 <div class="sect2">
 <h3 id="_local_variable_var_for_lambda">Local Variable (var) for lambda</h3>
 <div class="ulist">
@@ -565,23 +615,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_switch_expression_preview">Switch expression (preview)</h3>
 <div class="ulist">
-<ul>
-<li>
-<p>added in jdk 12</p>
-</li>
-<li>
-<p><code>&#8594;</code> operator, no need of <code>break;</code> anymore</p>
-</li>
-<li>
-<p>can return a value</p>
-</li>
-    <li>
-        <p>if multiple statement then use <code>yield</code> keyword to return value</p>
-    </li>
-    <li>
-        <p>if arrow operator is not use, <code>yield</code> keyword act as return (+ break)</p>
-    </li>
-</ul>
+    <ul>
+        <li>
+            <p>added in jdk 12</p>
+        </li>
+        <li>
+            <p><code>&#8594;</code> operator, no need of <code>break;</code> anymore</p>
+        </li>
+        <li>
+            <p>can return a value</p>
+        </li>
+        <li>
+            <p>if multiple statement then use <code>yield</code> keyword to return value</p>
+        </li>
+        <li>
+            <p>if arrow operator is not use, <code>yield</code> keyword act as return (+ break)</p>
+        </li>
+    </ul>
 </div>
     <div class="paragraph">
         <p>Code example before :</p>
@@ -671,15 +721,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p>express a multiline String</p>
 </li>
-<li>
-<p>take attention of the position of final <code>"""</code>, the last carriage return count</p>
-</li>
-<li>
-<p>consider only space after the first character of the first line BUT the closing delimiter can change that if you put it before the first character.</p>
-</li>
-<li>
-    <p>you can use <code>"</code> and <code>""</code> inside the text block</p>
-</li>
+    <li>
+        <p>take attention of the position of final <code>"""</code>, the last carriage return count</p>
+    </li>
+    <li>
+        <p>consider only space after the first character of the first line BUT the closing delimiter can change that if
+            you put it before the first character.</p>
+    </li>
+    <li>
+        <p>you can use <code>"</code> and <code>""</code> inside the text block</p>
+    </li>
     <li>
         <p>you can use <code>"""</code> inside a text block by escaping the at least one <code>"</code> (ex:
             <code>\"""</code>)</p>
@@ -719,12 +770,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
         style="color:#0a8;font-weight:bold">String</span> html = <span
         style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span><span
         style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">
-      &lt;html&gt;
-          &lt;body&gt;
-              &lt;p&gt;Hello, world&lt;/p&gt;
-          &lt;/body&gt;
-      &lt;/html&gt;
-      </span><span style="color:#710">&quot;</span></span><span style="background-color:hsla(0,100%,50%,0.05)"><span
+        &lt;html&gt;
+            &lt;body&gt;
+                &lt;p&gt;Hello, world&lt;/p&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+        </span><span style="color:#710">&quot;</span></span><span style="background-color:hsla(0,100%,50%,0.05)"><span
         style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>;</code></pre>
         </div>
     </div>
@@ -746,26 +797,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_records_second_preview">Records (second preview)</h3>
 <div class="ulist">
-<ul>
-<li>
-<p>added in jdk 14</p>
-</li>
-    <li>
-        <p>Data class &#8658; immutable</p>
-    </li>
-    <li>
-        <p>add possibility to declare a record locally</p>
-    </li>
-    <li>
-        <p>allow annotation on fields in the constructor</p>
-    </li>
-    <li>
-        <p>can override automatically generated method</p>
-    </li>
-    <li>
-        <p>can add new methods</p>
-    </li>
-</ul>
+    <ul>
+        <li>
+            <p>added in jdk 14</p>
+        </li>
+        <li>
+            <p>Data class &#8658; immutable</p>
+        </li>
+        <li>
+            <p>add possibility to declare a record locally</p>
+        </li>
+        <li>
+            <p>allow annotation on fields in the constructor</p>
+        </li>
+        <li>
+            <p>can override automatically generated method</p>
+        </li>
+        <li>
+            <p>can add new methods</p>
+        </li>
+    </ul>
 </div>
     <div class="paragraph">
         <p>Example :</p>
@@ -775,7 +826,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">public</span> record Person(<span
         style="color:#0a8;font-weight:bold">String</span> name, <span style="color:#0a8;font-weight:bold">String</span> surname, LocalDate birthday) {
 
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">int</span> calculateAge(LocalDate today){
+    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">int</span> calculateAge(LocalDate today) {
         <span style="color:#080;font-weight:bold">return</span> Period.between(birthday, today).getYears();
     }
 }</code></pre>
@@ -812,7 +863,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
         <div class="listingblock">
             <div class="content">
 <pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">if</span> (obj <span
-        style="color:#080;font-weight:bold">instanceof</span> <span style="color:#0a8;font-weight:bold">String</span> s){
+        style="color:#080;font-weight:bold">instanceof</span> <span style="color:#0a8;font-weight:bold">String</span> s) {
     <span style="color:#0a8;font-weight:bold">System</span>.out.println(s.length());
 }</code></pre>
             </div>
@@ -831,17 +882,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_sealed_types_preview">Sealed Types (preview)</h3>
 <div class="ulist">
-<ul>
-<li>
-    <p>prevent class extension but not superclass usage</p>
-</li>
-    <li>
-        <p>extension is limited to a bunch of selected/declared classes</p>
-    </li>
-    <li>
-        <p>works for interfaces too</p>
-    </li>
-</ul>
+    <ul>
+        <li>
+            <p>prevent class extension but not superclass usage</p>
+        </li>
+        <li>
+            <p>extension is limited to a bunch of selected/declared classes</p>
+        </li>
+        <li>
+            <p>works for interfaces too</p>
+        </li>
+    </ul>
 </div>
     <div class="paragraph">
         <p>Base Class :</p>
@@ -851,8 +902,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">public</span> <span
         style="color:#088;font-weight:bold">abstract</span> sealed <span
         style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Shape</span>
-        permits net.bakaar.jdk.demo.hidden.Circle
-        {
+        permits net.bakaar.jdk.demo.hidden.Circle {
 
 }</code></pre>
         </div>
@@ -889,7 +939,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-    Last updated 2020-09-13 16:40:35 +0200
+    Last updated 2020-09-22 13:03:18 +0200
 </div>
 </div>
 </body>
