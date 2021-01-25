@@ -35,12 +35,12 @@ Code example before jdk 11 :
 
 [source,java,indent=0]
 ----
-include::{sourcedir}/LocalVar.java[lines=8..14]
+include::{sourcedir}/LocalVar.java[tag=varBefore]
 ----
 Same Code with local variable:
 [source,java,indent=0]
 ----
-include::{sourcedir}/LocalVar.java[lines=15..20]
+include::{sourcedir}/LocalVar.java[tag=varAfter]
 ----
 
 ==== Notes
@@ -57,7 +57,7 @@ See https://dzone.com/articles/90-new-features-and-apis-in-jdk-11[this article] 
 
 === Java EE and CORBA module removal
 
-The following package are no more part of the JDK :
+The following packages are no more part of the JDK :
 
 - java.xml.ws (JAXWS)
 - java.xml.bind (JAXB)
@@ -66,4 +66,4 @@ The following package are no more part of the JDK :
 - java.corba
 - java.transation (JTA)
 
-There are maven artifact containing these packages, see : https://openjdk.java.net/jeps/320 for the whole list
+There are maven artifacts containing these packages, see : https://openjdk.java.net/jeps/320 for the whole list, but not all the versions are available !

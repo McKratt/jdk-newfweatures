@@ -30,19 +30,19 @@ see jdk 15
 Code example before :
 [source,java,indent=0]
 ----
-include::{sourcedir}/Switch.java[lines=8..24]
+include::{sourcedir}/Switch.java[tag=switchBefore]
 ----
 
 Code example with yield:
 [source,java,indent=0]
 ----
-include::{sourcedir}/Switch.java[lines=28..40]
+include::{sourcedir}/Switch.java[tag=switchAfterYield]
 ----
 
 Code example with `->` operator:
 [source,java,indent=0]
 ----
-include::{sourcedir}/Switch.java[lines=42..47]
+include::{sourcedir}/Switch.java[tag=switchAfterArrow]
 ----
 
 ==== Notes

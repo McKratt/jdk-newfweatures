@@ -446,7 +446,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_convenience_factory_methods_for_collections">Convenience Factory Methods for Collections</a></li>
 <li><a href="#_local_variable_var_for_lambda">Local Variable (var) for lambda</a></li>
-<li><a href="#_collections_new_api">Collections new api</a></li>
+<li><a href="#_new_apis">New APIs</a></li>
+<li><a href="#_java_ee_and_corba_module_removal">Java EE and CORBA module removal</a></li>
 </ul>
 </li>
 <li><a href="#_new_features_in_jdk_14">New Features in JDK 14</a>
@@ -472,71 +473,58 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1 data-line-1">
 <h2 id="_new_feature_in_jdk_11">New Feature in JDK 11</h2>
 <div class="sectionbody">
-<div class="sect2">
-    <h3 id="_convenience_factory_methods_for_collections">Convenience Factory Methods for Collections</h3>
-    <div class="ulist">
-        <ul>
-            <li>
-                <p>added in Jdk 9</p>
-            </li>
-            <li>
-                <p>allow to build collection from Array with simple methods</p>
-            </li>
-            <li>
-                <p>Created Collection are immutables</p>
-            </li>
-        </ul>
-    </div>
-    <div class="paragraph">
-        <p>Code example before:</p>
-    </div>
-    <div class="listingblock">
-        <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#0a8;font-weight:bold">Set</span>&lt;<span
-        style="color:#0a8;font-weight:bold">String</span>&gt; set = <span style="color:#080;font-weight:bold">new</span> <span
-        style="color:#0a8;font-weight:bold">HashSet</span>&lt;&gt;();
-set.add(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
-            style="color:#D20">a</span><span style="color:#710">&quot;</span></span>);
-set.add(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
-            style="color:#D20">b</span><span style="color:#710">&quot;</span></span>);
-set.add(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
-            style="color:#D20">c</span><span style="color:#710">&quot;</span></span>);
-set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableSet(set);</code></pre>
-        </div>
-    </div>
-    <div class="paragraph">
-        <p>Code example after:</p>
-    </div>
-    <div class="listingblock">
-        <div class="content">
-            <pre class="CodeRay highlight"><code data-lang="java"><span style="color:#0a8;font-weight:bold">Set</span>&lt;<span
-                    style="color:#0a8;font-weight:bold">String</span>&gt; set = <span
-                    style="color:#0a8;font-weight:bold">Set</span>.of(<span
-                    style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
-                    style="color:#D20">a</span><span style="color:#710">&quot;</span></span>, <span
-                    style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
-                    style="color:#D20">b</span><span style="color:#710">&quot;</span></span>, <span
-                    style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
-                    style="color:#D20">c</span><span style="color:#710">&quot;</span></span>);</code></pre>
-        </div>
-    </div>
-</div>
-<div class="sect2">
-<h3 id="_local_variable_var_for_lambda">Local Variable (var) for lambda</h3>
-<div class="ulist data-line-7">
+<div class="sect2 data-line-4">
+<h3 id="_convenience_factory_methods_for_collections">Convenience Factory Methods for Collections</h3>
+<div class="ulist data-line-6">
 <ul>
+<li class="data-line-6">
+<p>added in Jdk 9</p>
+</li>
 <li class="data-line-7">
-<p>added in Jdk 10</p>
+<p>allow to build collection from Array with simple methods</p>
 </li>
 <li class="data-line-8">
+<p>Created Collection are immutables</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-10">
+<p>Code example before:</p>
+</div>
+<div class="listingblock data-line-13">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Set&lt;String&gt; set = new HashSet&lt;&gt;();
+set.add("a");
+set.add("b");
+set.add("c");
+set = Collections.unmodifiableSet(set);</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-21">
+<p>Code example after:</p>
+</div>
+<div class="listingblock data-line-24">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Set&lt;String&gt; set = Set.of("a", "b", "c");</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2 data-line-28">
+<h3 id="_local_variable_var_for_lambda">Local Variable (var) for lambda</h3>
+<div class="ulist data-line-30">
+<ul>
+<li class="data-line-30">
+<p>added in Jdk 10</p>
+</li>
+<li class="data-line-31">
 <p>type inference</p>
 </li>
-<li class="data-line-9">
+<li class="data-line-32">
 <p>usable in lambda expression</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-11">
+<div class="paragraph data-line-34">
 <p>Code example before jdk 11 :</p>
 </div>
 <div class="listingblock data-line-7">
@@ -549,7 +537,7 @@ set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableS
 }</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-16">
+<div class="paragraph data-line-40">
 <p>Same Code with local variable:</p>
 </div>
 <div class="listingblock data-line-14">
@@ -562,27 +550,62 @@ set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableS
 }</code></pre>
 </div>
 </div>
-<div class="sect3 data-line-22">
+<div class="sect3 data-line-46">
 <h4 id="_notes">Notes</h4>
-<div class="ulist data-line-23">
+<div class="ulist data-line-47">
 <ul>
-<li>
-    <p>The use of local variable as parameter of the method is not allowed.It works only for lambda.</p>
+<li class="data-line-47">
+<p>The use of local variable as parameter of the method is not allowed.It works only for lambda.</p>
 </li>
-<li class="data-line-24">
+<li class="data-line-48">
 <p><code>var myList;</code> doesn&#8217;t work because there is no type to infer here.</p>
 </li>
-<li>
-    <p><strong>Warning !</strong> it can hide the actual type if name of the variable not adequate, ex : <code>var x =
-        getX();</code>.It is correct in term of compilation but for the reader it hides the actual type of x.</p>
+<li class="data-line-50">
+<p><strong>Warning !</strong> it can hide the actual type if name of the variable not adequate, ex : <code>var x = getX();</code>.It is correct in term of compilation but for the reader it hides the actual type of x.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-5">
-<h3 id="_collections_new_api">Collections new api</h3>
-
+<div class="sect2 data-line-52">
+<h3 id="_new_apis">New APIs</h3>
+<div class="paragraph data-line-54">
+<p>There are some new method for <code>String</code>, <code>Optional</code> and <code>Collections</code></p>
+</div>
+<div class="paragraph data-line-56">
+<p>See <a href="https://dzone.com/articles/90-new-features-and-apis-in-jdk-11">this article</a> for details</p>
+</div>
+</div>
+<div class="sect2 data-line-58">
+<h3 id="_java_ee_and_corba_module_removal">Java EE and CORBA module removal</h3>
+<div class="paragraph data-line-60">
+<p>The following package are no more part of the JDK :</p>
+</div>
+<div class="ulist data-line-62">
+<ul>
+<li class="data-line-62">
+<p>java.xml.ws (JAXWS)</p>
+</li>
+<li class="data-line-63">
+<p>java.xml.bind (JAXB)</p>
+</li>
+<li class="data-line-64">
+<p>java.activation (JAF)</p>
+</li>
+<li class="data-line-65">
+<p>java.xml.ws.annotation</p>
+</li>
+<li class="data-line-66">
+<p>java.corba</p>
+</li>
+<li class="data-line-67">
+<p>java.transation (JTA)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph data-line-5">
+<p>There are maven artifact containing these packages, see : <a href="https://openjdk.java.net/jeps/320" class="bare">https://openjdk.java.net/jeps/320</a> for the whole list</p>
+</div>
 </div>
 </div>
 </div>
@@ -620,24 +643,24 @@ set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableS
 </div>
 <div class="sect2 data-line-22">
 <h3 id="_switch_expression_preview">Switch expression (preview)</h3>
-<div class="ulist">
-    <ul>
-        <li>
-            <p>added in jdk 12</p>
-        </li>
-        <li>
-            <p><code>&#8594;</code> operator, no need of <code>break;</code> anymore</p>
-        </li>
-        <li>
-            <p>can return a value</p>
-        </li>
-        <li>
-            <p>if multiple statement then use <code>yield</code> keyword to return value</p>
-        </li>
-        <li>
-            <p>if arrow operator is not use, <code>yield</code> keyword act as return (+ break)</p>
-        </li>
-    </ul>
+<div class="ulist data-line-24">
+<ul>
+<li class="data-line-24">
+<p>added in jdk 12</p>
+</li>
+<li class="data-line-25">
+<p><code>&#8594;</code> operator, no need of <code>break;</code> anymore</p>
+</li>
+<li class="data-line-26">
+<p>can return a value</p>
+</li>
+<li class="data-line-27">
+<p>if multiple statement then use <code>yield</code> keyword to return value</p>
+</li>
+<li class="data-line-28">
+<p>if arrow operator is not use, <code>yield</code> keyword act as return (+ break)</p>
+</li>
+</ul>
 </div>
 <div class="paragraph data-line-30">
 <p>Code example before :</p>
@@ -717,120 +740,105 @@ set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableS
 <div class="sectionbody">
 <div class="sect2 data-line-4">
 <h3 id="_text_blocks">Text Blocks</h3>
-<div class="ulist">
-    <ul>
-        <li>
-            <p>added in jdk 13</p>
-        </li>
-        <li>
-            <p>express a multiline String</p>
-        </li>
-        <li>
-            <p>take attention of the position of final <code>"""</code>, the last carriage return count</p>
-        </li>
-        <li>
-            <p>consider only space after the first character of the first line BUT the closing delimiter can change that
-                if you put it before the first character.</p>
-        </li>
-        <li>
-            <p>you can use <code>"</code> and <code>""</code> inside the text block</p>
-        </li>
-        <li>
-            <p>you can use <code>"""</code> inside a text block by escaping the at least one <code>"</code> (ex: <code>\"""</code>)
-            </p>
-        </li>
-        <li>
-            <p>you can add text block by using <code>+</code></p>
-        </li>
-    </ul>
+<div class="ulist data-line-6">
+<ul>
+<li class="data-line-6">
+<p>added in jdk 13</p>
+</li>
+<li class="data-line-7">
+<p>express a multiline String</p>
+</li>
+<li class="data-line-8">
+<p>take attention of the position of final <code>"""</code>, the last carriage return count</p>
+</li>
+<li class="data-line-9">
+<p>consider only space after the first character of the first line BUT the closing delimiter can change that if you put it before the first character.</p>
+</li>
+<li class="data-line-10">
+<p>you can use <code>"</code> and <code>""</code> inside the text block</p>
+</li>
+<li class="data-line-11">
+<p>you can use <code>"""</code> inside a text block by escaping the at least one <code>"</code> (ex: <code>\"""</code>)</p>
+</li>
+<li class="data-line-12">
+<p>you can add text block by using <code>+</code></p>
+</li>
+</ul>
 </div>
-    <div class="paragraph">
-        <p>Example code with String :</p>
-    </div>
-    <div class="listingblock">
-        <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span
-        style="color:#0a8;font-weight:bold">String</span> html = <span
-        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">&lt;html&gt;</span><span
-        style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> +
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
-                style="color:#D20">    &lt;body&gt;</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> +
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
-                style="color:#D20">        &lt;p&gt;Hello, world&lt;/p&gt;</span><span style="color:#b0b">\n</span><span
-                style="color:#710">&quot;</span></span> +
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
-                style="color:#D20">    &lt;/body&gt;</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> +
-        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
-                style="color:#D20">&lt;/html&gt;</span><span style="color:#b0b">\n</span><span
-                style="color:#710">&quot;</span></span>;</code></pre>
-        </div>
-    </div>
-    <div class="paragraph">
-        <p>Example code with TextBlock :</p>
-    </div>
-    <div class="listingblock">
-        <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">    <span style="color:#0a8;font-weight:bold">String</span> html = <span
-        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span><span
-        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">
+<div class="paragraph data-line-14">
+<p>Example code with String :</p>
+</div>
+<div class="listingblock data-line-5">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">String html = "&lt;html&gt;\n" +
+        "    &lt;body&gt;\n" +
+        "        &lt;p&gt;Hello, world&lt;/p&gt;\n" +
+        "    &lt;/body&gt;\n" +
+        "&lt;/html&gt;\n";</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-21">
+<p>Example code with TextBlock :</p>
+</div>
+<div class="listingblock data-line-16">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">    String html = """
             &lt;html&gt;
                 &lt;body&gt;
                     &lt;p&gt;Hello, world&lt;/p&gt;
                 &lt;/body&gt;
             &lt;/html&gt;
-            </span><span style="color:#710">&quot;</span></span><span
-        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>;
+            """;
 }</code></pre>
-        </div>
-    </div>
-    <div class="sect3">
-        <h4 id="_notes_3">NOTES</h4>
-        <div class="ulist">
-            <ul>
-                <li>
-                    <p>IntelliJ show the final indentation</p>
-                </li>
-                <li>
-                    <p>More examples here : <a class="bare" href="https://openjdk.java.net/jeps/378">https://openjdk.java.net/jeps/378</a>
-                    </p>
-                </li>
-            </ul>
-        </div>
-    </div>
 </div>
-<div class="sect2">
+</div>
+<div class="sect3 data-line-28">
+<h4 id="_notes_3">NOTES</h4>
+<div class="ulist data-line-30">
+<ul>
+<li class="data-line-30">
+<p>IntelliJ show the final indentation</p>
+</li>
+<li class="data-line-31">
+<p>More examples here : <a href="https://openjdk.java.net/jeps/378" class="bare">https://openjdk.java.net/jeps/378</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2 data-line-33">
 <h3 id="_records_second_preview">Records (second preview)</h3>
-<div class="ulist">
-    <ul>
-        <li>
-            <p>added in jdk 14</p>
-        </li>
-        <li>
-            <p>Data class &#8658; immutable</p>
-        </li>
-        <li>
-            <p>add possibility to declare a record locally</p>
-        </li>
-        <li>
-            <p>allow annotation on fields in the constructor</p>
-        </li>
-        <li>
-            <p>can override automatically generated method</p>
-        </li>
-        <li>
-            <p>can add new methods</p>
-        </li>
-    </ul>
+<div class="ulist data-line-35">
+<ul>
+<li class="data-line-35">
+<p>added in jdk 14</p>
+</li>
+<li class="data-line-36">
+<p>Data class &#8658; immutable</p>
+</li>
+<li class="data-line-37">
+<p>add possibility to declare a record locally</p>
+</li>
+<li class="data-line-38">
+<p>allow annotation on fields in the constructor</p>
+</li>
+<li class="data-line-39">
+<p>can override automatically generated method</p>
+</li>
+<li class="data-line-40">
+<p>can add new methods</p>
+</li>
+</ul>
 </div>
 <div class="paragraph data-line-42">
 <p>Example :</p>
 </div>
-<div class="listingblock data-line-5">
+<div class="listingblock data-line-6">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">public record Person(String name, String surname, LocalDate birthday) {
 
-    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">int</span> calculateAge(LocalDate today) {
-        <span style="color:#080;font-weight:bold">return</span> Period.between(birthday, today).getYears();
+    public int calculateAge(LocalDate today) {
+        return Period.between(birthday, today).getYears();
     }
 }</code></pre>
 </div>
@@ -857,16 +865,15 @@ set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableS
     String s = (String) obj;
     System.out.println(s.length());
 }</code></pre>
-            </div>
-        </div>
-        <div class="paragraph">
-            <p>Code example after :</p>
-        </div>
-        <div class="listingblock">
-            <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">if</span> (obj <span
-        style="color:#080;font-weight:bold">instanceof</span> <span style="color:#0a8;font-weight:bold">String</span> s) {
-    <span style="color:#0a8;font-weight:bold">System</span>.out.println(s.length());
+</div>
+</div>
+<div class="paragraph data-line-61">
+<p>Code example after :</p>
+</div>
+<div class="listingblock data-line-14">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">if (obj instanceof String s) {
+    System.out.println(s.length());
 }</code></pre>
 </div>
 </div>
@@ -883,27 +890,25 @@ set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableS
 </div>
 <div class="sect2 data-line-72">
 <h3 id="_sealed_types_preview">Sealed Types (preview)</h3>
-<div class="ulist">
-    <ul>
-        <li>
-            <p>prevent class extension but not superclass usage</p>
-        </li>
-        <li>
-            <p>extension is limited to a bunch of selected/declared classes</p>
-        </li>
-        <li>
-            <p>works for interfaces too</p>
-        </li>
-    </ul>
+<div class="ulist data-line-74">
+<ul>
+<li class="data-line-74">
+<p>prevent class extension but not superclass usage</p>
+</li>
+<li class="data-line-75">
+<p>extension is limited to a bunch of selected/declared classes</p>
+</li>
+<li class="data-line-76">
+<p>works for interfaces too</p>
+</li>
+</ul>
 </div>
-    <div class="paragraph">
-        <p>Base Class :</p>
-    </div>
-    <div class="listingblock">
-        <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">public</span> <span
-        style="color:#088;font-weight:bold">abstract</span> sealed <span
-        style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Shape</span>
+<div class="paragraph data-line-78">
+<p>Base Class :</p>
+</div>
+<div class="listingblock data-line-3">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public abstract sealed class Shape
         permits net.bakaar.jdk.demo.hidden.Circle {
 
 }</code></pre>
@@ -937,7 +942,7 @@ set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableS
 </div>
 <div id="footer">
 <div id="footer-text">
-    Last updated 2020-09-22 13:03:18 +0200
+Last updated 2021-01-25 13:59:03 +0100
 </div>
 </div>
 </body>
