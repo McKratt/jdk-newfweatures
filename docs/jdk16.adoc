@@ -1,0 +1,14 @@
+== New Features in JDK 16
+:sourcedir: ../src/main/java/net/bakaar/jdk/demo
+
+=== Record
+
+Should be final
+
+=== Pattern matching for instanceof
+
+Should be final
+
+=== Sealed Classes 
+
+Second Preview

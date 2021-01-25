@@ -1,7 +1,7 @@
 package net.bakaar.jdk.demo;
 
 public class TextBlock {
-    private void stringBefore() {
+    private void stringBlock() {
         //tag::blockString[]
         String html = "<html>\n" +
                 "    <body>\n" +
@@ -12,6 +12,19 @@ public class TextBlock {
         System.out.println(html);
     }
 
+    private void formatedString() {
+        //tag::formatedString[]
+        String name = "toto";
+        String type = "type";
+        String.format("{"+
+                      "\"type\":\"%s\"," +
+                      "\"name\":\"%s\"" +
+                      "}", 
+        type, name);
+        //end::formatedString[]
+    }
+
+
     private void textBlock() {
         //tag::textBlock[]
         String html = """
@@ -21,6 +34,18 @@ public class TextBlock {
                     </body>
                 </html>
                 """;
+                //end::textBlock[]
     }
-    //end::textBlock[]
+
+    private void formatedTextBlock(){
+        //tag::formatedTextBlock[]
+        String name = "toto";
+        String type = "type";
+        """
+                        {
+                          "type": "%s",
+                          "name": "%s"
+                        }""".formatted(type, name);
+                        //end::formatedTextBlock[]
+    }
 }

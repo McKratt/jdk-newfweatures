@@ -25,7 +25,22 @@ Example code with TextBlock :
 include::{sourcedir}/TextBlock.java[tags=textBlock]
 ----
 
-==== NOTES
+Formated String :
+
+[source,java,indent=0]
+----
+include::{sourcedir}/TextBlock.java[tags=formatedString]
+----
+
+Formated TextBlock :
+
+[source,java,indent=0]
+----
+include::{sourcedir}/TextBlock.java[tags=formatedTextBlock]
+----
+
+
+[.underline]#**NOTES**#
 
 * IntelliJ show the final indentation
 * More examples here : https://openjdk.java.net/jeps/378
@@ -65,11 +80,11 @@ Code example after :
 include::{sourcedir}/PatternMatchingInstanceOf.java[tags=patMatchAfter]
 ----
 
-==== NOTES
+[.underline]#**NOTES**#
 
 * Valid only in the `true` block of an `if else` declaration
 
-=== Sealed Types (preview)
+=== Sealed Classes (preview)
 
 * prevent class extension but not superclass usage
 * extension is limited to a bunch of selected/declared classes
@@ -89,7 +104,7 @@ Extending Class :
 include::{sourcedir}/hidden/Circle.java[tags=implementSealed]
 ----
 
-==== NOTES
+[.underline]#**NOTES**#
 
 * the extending class need to be final (logical !)
 * More info here : https://openjdk.java.net/jeps/360

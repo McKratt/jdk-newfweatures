@@ -8,3 +8,4 @@ include::jdk14.adoc[]
 
 include::jdk15.adoc[]
 
+include::jdk16.adoc[]

@@ -43,7 +43,8 @@ Same Code with local variable:
 include::{sourcedir}/LocalVar.java[tag=varAfter]
 ----
 
-==== Notes
+[.underline]#**NOTES**#
+
 * The use of local variable as parameter of the method is not allowed.It works only for lambda.
 * `var myList;` doesn't work because there is no type to infer here.
 
@@ -55,7 +56,7 @@ There are some new method for `String`, `Optional` and `Collections`
 
 See https://dzone.com/articles/90-new-features-and-apis-in-jdk-11[this article] for details
 
-=== Java EE and CORBA module removal
+=== Java EE and CORBA modules removal
 
 The following packages are no more part of the JDK :
 
@@ -65,5 +66,7 @@ The following packages are no more part of the JDK :
 - java.xml.ws.annotation 
 - java.corba
 - java.transation (JTA)
+
+[.underline]#**NOTES**#
 
 There are maven artifacts containing these packages, see : https://openjdk.java.net/jeps/320 for the whole list, but not all the versions are available !

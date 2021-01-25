@@ -447,7 +447,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_convenience_factory_methods_for_collections">Convenience Factory Methods for Collections</a></li>
 <li><a href="#_local_variable_var_for_lambda">Local Variable (var) for lambda</a></li>
 <li><a href="#_new_apis">New APIs</a></li>
-<li><a href="#_java_ee_and_corba_module_removal">Java EE and CORBA module removal</a></li>
+<li><a href="#_java_ee_and_corba_modules_removal">Java EE and CORBA modules removal</a></li>
 </ul>
 </li>
 <li><a href="#_new_features_in_jdk_14">New Features in JDK 14</a>
@@ -455,7 +455,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_clear_nullpointerexception">Clear NullPointerException</a></li>
 <li><a href="#_records_preview">Records (preview)</a></li>
 <li><a href="#_pattern_matching_instanceof_preview">Pattern Matching instanceof (preview)</a></li>
-<li><a href="#_switch_expression_preview">Switch expression (preview)</a></li>
+<li><a href="#_switch_expression">Switch expression</a></li>
 </ul>
 </li>
 <li><a href="#_new_features_in_jdk_15">New Features in JDK 15</a>
@@ -463,7 +463,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_text_blocks">Text Blocks</a></li>
 <li><a href="#_records_second_preview">Records (second preview)</a></li>
 <li><a href="#_pattern_matching_instanceof_second_preview">Pattern Matching instanceof (second preview)</a></li>
-<li><a href="#_sealed_types_preview">Sealed Types (preview)</a></li>
+<li><a href="#_sealed_classes_preview">Sealed Classes (preview)</a></li>
+</ul>
+</li>
+<li><a href="#_new_features_in_jdk_16">New Features in JDK 16</a>
+<ul class="sectlevel2">
+<li><a href="#_record">Record</a></li>
+<li><a href="#_pattern_matching_for_instanceof">Pattern matching for instanceof</a></li>
+<li><a href="#_sealed_classes">Sealed Classes</a></li>
 </ul>
 </li>
 </ul>
@@ -540,7 +547,7 @@ set = Collections.unmodifiableSet(set);</code></pre>
 <div class="paragraph data-line-40">
 <p>Same Code with local variable:</p>
 </div>
-<div class="listingblock data-line-14">
+<div class="listingblock data-line-16">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">private void localVarAfter11() {
     var myList = new ArrayList&lt;String&gt;();
@@ -550,61 +557,64 @@ set = Collections.unmodifiableSet(set);</code></pre>
 }</code></pre>
 </div>
 </div>
-<div class="sect3 data-line-46">
-<h4 id="_notes">Notes</h4>
-<div class="ulist data-line-47">
+<div class="paragraph data-line-46">
+<p><span class="underline"><strong>NOTES</strong></span></p>
+</div>
+<div class="ulist data-line-48">
 <ul>
-<li class="data-line-47">
+<li class="data-line-48">
 <p>The use of local variable as parameter of the method is not allowed.It works only for lambda.</p>
 </li>
-<li class="data-line-48">
+<li class="data-line-49">
 <p><code>var myList;</code> doesn&#8217;t work because there is no type to infer here.</p>
 </li>
-<li class="data-line-50">
+<li class="data-line-51">
 <p><strong>Warning !</strong> it can hide the actual type if name of the variable not adequate, ex : <code>var x = getX();</code>.It is correct in term of compilation but for the reader it hides the actual type of x.</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-<div class="sect2 data-line-52">
+<div class="sect2 data-line-53">
 <h3 id="_new_apis">New APIs</h3>
-<div class="paragraph data-line-54">
+<div class="paragraph data-line-55">
 <p>There are some new method for <code>String</code>, <code>Optional</code> and <code>Collections</code></p>
 </div>
-<div class="paragraph data-line-56">
+<div class="paragraph data-line-57">
 <p>See <a href="https://dzone.com/articles/90-new-features-and-apis-in-jdk-11">this article</a> for details</p>
 </div>
 </div>
-<div class="sect2 data-line-58">
-<h3 id="_java_ee_and_corba_module_removal">Java EE and CORBA module removal</h3>
-<div class="paragraph data-line-60">
-<p>The following package are no more part of the JDK :</p>
+<div class="sect2 data-line-59">
+<h3 id="_java_ee_and_corba_modules_removal">Java EE and CORBA modules removal</h3>
+<div class="paragraph data-line-61">
+<p>The following packages are no more part of the JDK :</p>
 </div>
-<div class="ulist data-line-62">
+<div class="ulist data-line-63">
 <ul>
-<li class="data-line-62">
+<li class="data-line-63">
 <p>java.xml.ws (JAXWS)</p>
 </li>
-<li class="data-line-63">
+<li class="data-line-64">
 <p>java.xml.bind (JAXB)</p>
 </li>
-<li class="data-line-64">
+<li class="data-line-65">
 <p>java.activation (JAF)</p>
 </li>
-<li class="data-line-65">
+<li class="data-line-66">
 <p>java.xml.ws.annotation</p>
 </li>
-<li class="data-line-66">
+<li class="data-line-67">
 <p>java.corba</p>
 </li>
-<li class="data-line-67">
+<li class="data-line-68">
 <p>java.transation (JTA)</p>
 </li>
 </ul>
 </div>
+<div class="paragraph data-line-70">
+<p><span class="underline"><strong>NOTES</strong></span></p>
+</div>
 <div class="paragraph data-line-5">
-<p>There are maven artifact containing these packages, see : <a href="https://openjdk.java.net/jeps/320" class="bare">https://openjdk.java.net/jeps/320</a> for the whole list</p>
+<p>There are maven artifacts containing these packages, see : <a href="https://openjdk.java.net/jeps/320" class="bare">https://openjdk.java.net/jeps/320</a> for the whole list, but not all the versions are available !</p>
 </div>
 </div>
 </div>
@@ -642,7 +652,7 @@ set = Collections.unmodifiableSet(set);</code></pre>
 </div>
 </div>
 <div class="sect2 data-line-22">
-<h3 id="_switch_expression_preview">Switch expression (preview)</h3>
+<h3 id="_switch_expression">Switch expression</h3>
 <div class="ulist data-line-24">
 <ul>
 <li class="data-line-24">
@@ -665,7 +675,7 @@ set = Collections.unmodifiableSet(set);</code></pre>
 <div class="paragraph data-line-30">
 <p>Code example before :</p>
 </div>
-<div class="listingblock data-line-7">
+<div class="listingblock data-line-8">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">switch (day) {
     case MONDAY:
@@ -689,7 +699,7 @@ set = Collections.unmodifiableSet(set);</code></pre>
 <div class="paragraph data-line-36">
 <p>Code example with yield:</p>
 </div>
-<div class="listingblock data-line-27">
+<div class="listingblock data-line-31">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">System.out.println(switch (day) {
     case MONDAY:
@@ -709,7 +719,7 @@ set = Collections.unmodifiableSet(set);</code></pre>
 <div class="paragraph data-line-42">
 <p>Code example with <code>&#8594;</code> operator:</p>
 </div>
-<div class="listingblock data-line-41">
+<div class="listingblock data-line-47">
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java">System.out.println(switch (day) {
     case MONDAY, FRIDAY, SUNDAY -&gt; 6;
@@ -719,18 +729,18 @@ set = Collections.unmodifiableSet(set);</code></pre>
 });</code></pre>
 </div>
 </div>
-<div class="sect3 data-line-48">
-<h4 id="_notes_2">Notes</h4>
-<div class="ulist data-line-49">
+<div class="paragraph data-line-48">
+<p><span class="underline"><strong>Notes</strong></span></p>
+</div>
+<div class="ulist data-line-50">
 <ul>
-<li class="data-line-49">
+<li class="data-line-50">
 <p>you cannot mix <code>yield</code> and the <code>&#8594;</code> operator</p>
 </li>
-<li class="data-line-50">
+<li class="data-line-51">
 <p>if you need to write more than one statement per value, you have to use <code>yield</code></p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
@@ -780,57 +790,84 @@ set = Collections.unmodifiableSet(set);</code></pre>
 <div class="paragraph data-line-21">
 <p>Example code with TextBlock :</p>
 </div>
+<div class="listingblock data-line-29">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">String html = """
+        &lt;html&gt;
+            &lt;body&gt;
+                &lt;p&gt;Hello, world&lt;/p&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+        """;</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-28">
+<p>Formated String :</p>
+</div>
 <div class="listingblock data-line-16">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">    String html = """
-            &lt;html&gt;
-                &lt;body&gt;
-                    &lt;p&gt;Hello, world&lt;/p&gt;
-                &lt;/body&gt;
-            &lt;/html&gt;
-            """;
-}</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">String name = "toto";
+String type = "type";
+String.format("{"+
+              "\"type\":\"%s\"," +
+              "\"name\":\"%s\"" +
+              "}",
+type, name);</code></pre>
 </div>
 </div>
-<div class="sect3 data-line-28">
-<h4 id="_notes_3">NOTES</h4>
-<div class="ulist data-line-30">
+<div class="paragraph data-line-35">
+<p>Formated TextBlock :</p>
+</div>
+<div class="listingblock data-line-41">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">String name = "toto";
+String type = "type";
+"""
+                {
+                  "type": "%s",
+                  "name": "%s"
+                }""".formatted(type, name);</code></pre>
+</div>
+</div>
+<div class="paragraph data-line-43">
+<p><span class="underline"><strong>NOTES</strong></span></p>
+</div>
+<div class="ulist data-line-45">
 <ul>
-<li class="data-line-30">
+<li class="data-line-45">
 <p>IntelliJ show the final indentation</p>
 </li>
-<li class="data-line-31">
+<li class="data-line-46">
 <p>More examples here : <a href="https://openjdk.java.net/jeps/378" class="bare">https://openjdk.java.net/jeps/378</a></p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-<div class="sect2 data-line-33">
+<div class="sect2 data-line-48">
 <h3 id="_records_second_preview">Records (second preview)</h3>
-<div class="ulist data-line-35">
+<div class="ulist data-line-50">
 <ul>
-<li class="data-line-35">
+<li class="data-line-50">
 <p>added in jdk 14</p>
 </li>
-<li class="data-line-36">
+<li class="data-line-51">
 <p>Data class &#8658; immutable</p>
 </li>
-<li class="data-line-37">
+<li class="data-line-52">
 <p>add possibility to declare a record locally</p>
 </li>
-<li class="data-line-38">
+<li class="data-line-53">
 <p>allow annotation on fields in the constructor</p>
 </li>
-<li class="data-line-39">
+<li class="data-line-54">
 <p>can override automatically generated method</p>
 </li>
-<li class="data-line-40">
+<li class="data-line-55">
 <p>can add new methods</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-42">
+<div class="paragraph data-line-57">
 <p>Example :</p>
 </div>
 <div class="listingblock data-line-6">
@@ -844,19 +881,19 @@ set = Collections.unmodifiableSet(set);</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2 data-line-49">
+<div class="sect2 data-line-64">
 <h3 id="_pattern_matching_instanceof_second_preview">Pattern Matching instanceof (second preview)</h3>
-<div class="ulist data-line-51">
+<div class="ulist data-line-66">
 <ul>
-<li class="data-line-51">
+<li class="data-line-66">
 <p>added in jdk 14</p>
 </li>
-<li class="data-line-52">
+<li class="data-line-67">
 <p>direct cast (remove the need of an explicit cast after the <code>if</code> statement)</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-54">
+<div class="paragraph data-line-69">
 <p>Code example before :</p>
 </div>
 <div class="listingblock data-line-5">
@@ -867,7 +904,7 @@ set = Collections.unmodifiableSet(set);</code></pre>
 }</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-61">
+<div class="paragraph data-line-76">
 <p>Code example after :</p>
 </div>
 <div class="listingblock data-line-14">
@@ -877,33 +914,33 @@ set = Collections.unmodifiableSet(set);</code></pre>
 }</code></pre>
 </div>
 </div>
-<div class="sect3 data-line-68">
-<h4 id="_notes_4">NOTES</h4>
-<div class="ulist data-line-70">
+<div class="paragraph data-line-83">
+<p><span class="underline"><strong>NOTES</strong></span></p>
+</div>
+<div class="ulist data-line-85">
 <ul>
-<li class="data-line-70">
+<li class="data-line-85">
 <p>Valid only in the <code>true</code> block of an <code>if else</code> declaration</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-<div class="sect2 data-line-72">
-<h3 id="_sealed_types_preview">Sealed Types (preview)</h3>
-<div class="ulist data-line-74">
+<div class="sect2 data-line-87">
+<h3 id="_sealed_classes_preview">Sealed Classes (preview)</h3>
+<div class="ulist data-line-89">
 <ul>
-<li class="data-line-74">
+<li class="data-line-89">
 <p>prevent class extension but not superclass usage</p>
 </li>
-<li class="data-line-75">
+<li class="data-line-90">
 <p>extension is limited to a bunch of selected/declared classes</p>
 </li>
-<li class="data-line-76">
+<li class="data-line-91">
 <p>works for interfaces too</p>
 </li>
 </ul>
 </div>
-<div class="paragraph data-line-78">
+<div class="paragraph data-line-93">
 <p>Base Class :</p>
 </div>
 <div class="listingblock data-line-3">
@@ -914,7 +951,7 @@ set = Collections.unmodifiableSet(set);</code></pre>
 }</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-85">
+<div class="paragraph data-line-100">
 <p>Extending Class :</p>
 </div>
 <div class="listingblock data-line-3">
@@ -923,14 +960,15 @@ set = Collections.unmodifiableSet(set);</code></pre>
 }</code></pre>
 </div>
 </div>
-<div class="sect3 data-line-92">
-<h4 id="_notes_5">NOTES</h4>
-<div class="ulist data-line-94">
+<div class="paragraph data-line-107">
+<p><span class="underline"><strong>NOTES</strong></span></p>
+</div>
+<div class="ulist data-line-109">
 <ul>
-<li class="data-line-94">
+<li class="data-line-109">
 <p>the extending class need to be final (logical !)</p>
 </li>
-<li class="data-line-95">
+<li class="data-line-110">
 <p>More info here : <a href="https://openjdk.java.net/jeps/360" class="bare">https://openjdk.java.net/jeps/360</a></p>
 </li>
 </ul>
@@ -938,11 +976,33 @@ set = Collections.unmodifiableSet(set);</code></pre>
 </div>
 </div>
 </div>
+<div class="sect1 data-line-1">
+<h2 id="_new_features_in_jdk_16">New Features in JDK 16</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-4">
+<h3 id="_record">Record</h3>
+<div class="paragraph data-line-6">
+<p>Should be final</p>
+</div>
+</div>
+<div class="sect2 data-line-8">
+<h3 id="_pattern_matching_for_instanceof">Pattern matching for instanceof</h3>
+<div class="paragraph data-line-10">
+<p>Should be final</p>
+</div>
+</div>
+<div class="sect2 data-line-12">
+<h3 id="_sealed_classes">Sealed Classes</h3>
+<div class="paragraph data-line-11">
+<p>Second Preview</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-01-25 13:59:03 +0100
+Last updated 2021-01-25 19:17:00 +0100
 </div>
 </div>
 </body>

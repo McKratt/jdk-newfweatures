@@ -19,7 +19,7 @@ see jdk 15
 
 see jdk 15
 
-=== Switch expression (preview)
+=== Switch expression
 
 * added in jdk 12
 * `->` operator, no need of `break;` anymore
@@ -45,6 +45,7 @@ Code example with `->` operator:
 include::{sourcedir}/Switch.java[tag=switchAfterArrow]
 ----
 
-==== Notes
+[.underline]#**Notes**#
+
 * you cannot mix `yield` and the `->` operator
 * if you need to write more than one statement per value, you have to use `yield`
