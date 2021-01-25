@@ -12,3 +12,7 @@ Should be final
 === Sealed Classes 
 
 Second Preview
+
+=== Vector API (incubating)
+
+Vactor Calcultation ability
