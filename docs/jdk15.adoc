@@ -15,14 +15,14 @@ Example code with String :
 
 [source,java,indent=0]
 ----
-include::{sourcedir}/TextBlock.java[lines=6..10]
+include::{sourcedir}/TextBlock.java[tags=blockString]
 ----
 
 Example code with TextBlock :
 
 [source,java,indent=0]
 ----
-include::{sourcedir}/TextBlock.java[lines=15..21]
+include::{sourcedir}/TextBlock.java[tags=textBlock]
 ----
 
 ==== NOTES
@@ -43,7 +43,7 @@ Example :
 
 [source,java,indent=0]
 ----
-include::{sourcedir}/Person.java[lines=6..11]
+include::{sourcedir}/Person.java[tags=record]
 ----
 
 === Pattern Matching instanceof (second preview)
@@ -55,14 +55,14 @@ Code example before :
 
 [source,java,indent=0]
 ----
-include::{sourcedir}/PatternMatchingInstanceOf.java[lines=6..9]
+include::{sourcedir}/PatternMatchingInstanceOf.java[tags=patMatchBefore]
 ----
 
 Code example after :
 
 [source,java,indent=0]
 ----
-include::{sourcedir}/PatternMatchingInstanceOf.java[lines=13..15]
+include::{sourcedir}/PatternMatchingInstanceOf.java[tags=patMatchAfter]
 ----
 
 ==== NOTES
@@ -79,14 +79,14 @@ Base Class :
 
 [source,java,indent=0]
 ----
-include::{sourcedir}/hidden/Shape.java[lines=3..7]
+include::{sourcedir}/hidden/Shape.java[tags=sealed]
 ----
 
 Extending Class :
 
 [source,java,indent=0]
 ----
-include::{sourcedir}/hidden/Circle.java[lines=4..5]
+include::{sourcedir}/hidden/Circle.java[tags=implementSealed]
 ----
 
 ==== NOTES

@@ -1,6 +1,29 @@
 == New Feature in JDK 11
 :sourcedir: ../src/main/java/net/bakaar/jdk/demo
 
+=== Convenience Factory Methods for Collections
+
+* added in Jdk 9
+* allow to build collection from Array with simple methods
+* Created Collection are immutables
+
+Code example before:
+
+[source,java,indent=0]
+----
+Set<String> set = new HashSet<>();
+set.add("a");
+set.add("b");
+set.add("c");
+set = Collections.unmodifiableSet(set);
+----
+
+Code example after:
+
+[source,java,indent=0]
+----
+Set<String> set = Set.of("a", "b", "c");
+----
 
 === Local Variable (var) for lambda
 
@@ -9,20 +32,22 @@
 * usable in lambda expression
 
 Code example before jdk 11 :
+
 [source,java,indent=0]
 ----
 include::{sourcedir}/LocalVar.java[lines=8..14]
 ----
 Same Code with local variable:
-[source,java, indent=0]
+[source,java,indent=0]
 ----
 include::{sourcedir}/LocalVar.java[lines=15..20]
 ----
 
 ==== Notes
-* The use of local variable as parameter of the method is not allowed. It works only for lambda.
+* The use of local variable as parameter of the method is not allowed.It works only for lambda.
 * `var myList;` doesn't work because there is no type to infer here.
-* **Warning !** it can hide the actual type if name of the variable not adequate, ex : `var x = getX();`. It is correct in term of compilation but for the reader it hides the actual type of x.
+
+* **Warning !** it can hide the actual type if name of the variable not adequate, ex : `var x = getX();`.It is correct in term of compilation but for the reader it hides the actual type of x.
 
 === New APIs
 
