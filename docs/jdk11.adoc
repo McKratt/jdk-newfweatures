@@ -23,3 +23,22 @@ include::{sourcedir}/LocalVar.java[lines=15..20]
 * The use of local variable as parameter of the method is not allowed. It works only for lambda.
 * `var myList;` doesn't work because there is no type to infer here.
 * **Warning !** it can hide the actual type if name of the variable not adequate, ex : `var x = getX();`. It is correct in term of compilation but for the reader it hides the actual type of x.
+
+=== New APIs
+
+There are some new method for `String`, `Optional` and `Collections`
+
+See https://dzone.com/articles/90-new-features-and-apis-in-jdk-11[this article] for details
+
+=== Java EE and CORBA module removal
+
+The following package are no more part of the JDK :
+
+- java.xml.ws (JAXWS)
+- java.xml.bind (JAXB)
+- java.activation (JAF)
+- java.xml.ws.annotation 
+- java.corba
+- java.transation (JTA)
+
+There are maven artifact containing these packages, see : https://openjdk.java.net/jeps/320 for the whole list
