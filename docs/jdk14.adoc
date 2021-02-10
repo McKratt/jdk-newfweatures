@@ -11,6 +11,20 @@ a.b.c.i = 99 => will throw this error if b is null :
    Cannot read field "c" because "a.b" is null at Prog.main(Prog.java:5)
 ....
 
+Code Example :
+
+[source,java,indent=0]
+----
+include::{sourcedir}/NullExample.java[tag=nullExample]
+----
+
+Will raise the following exception :
+
+....
+Exception in thread "main" java.lang.NullPointerException: Cannot invoke "NullExample$A.getNumber()" because the return value of "NullExample$B.getA()" is null
+	at NullExample.main(NullExample.java:8)
+....
+
 === Records (preview)
 
 see jdk 15

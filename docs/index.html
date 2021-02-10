@@ -26,16 +26,52 @@ hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
 mark{background:#ff0;color:#000}
 code,kbd,pre,samp{font-family:monospace;font-size:1em}
 pre{white-space:pre-wrap}
-q{quotes:"\201C" "\201D" "\2018" "\2019"}
-small{font-size:80%}
-sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
-sup{top:-.5em}
-sub{bottom:-.25em}
-img{border:0}
-svg:not(:root){overflow:hidden}
-figure{margin:0}
-fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
-legend{border:0;padding:0}
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019"
+}
+
+small {
+    font-size: 80%
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -.5em
+}
+
+sub {
+    bottom: -.25em
+}
+
+img {
+    border: 0
+}
+
+svg:not(:root) {
+    overflow: hidden
+}
+
+figure {
+    margin: 0
+}
+
+fieldset {
+    border: 1px solid silver;
+    margin: 0 2px;
+    padding: .35em .625em .75em
+}
+
+legend {
+    border: 0;
+    padding: 0
+}
+
 button, input, select, textarea {
     font-family: inherit;
     font-size: 100%;
@@ -239,22 +275,87 @@ h3, #toctitle, .sidebarblock > .content > .title {
 h4, h5 {
     font-size: 1.125em
 }
-h6{font-size:1em}
-hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
-em,i{font-style:italic;line-height:inherit}
-strong,b{font-weight:bold;line-height:inherit}
-small{font-size:60%;line-height:inherit}
-code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
-ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
-ul,ol{margin-left:1.5em}
-ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
-ul.circle{list-style-type:circle}
-ul.disc{list-style-type:disc}
-ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
-dl dt{margin-bottom:.3125em;font-weight:bold}
-dl dd{margin-bottom:1.25em}
+
+h6 {
+    font-size: 1em
+}
+
+hr {
+    border: solid #dddddf;
+    border-width: 1px 0 0;
+    clear: both;
+    margin: 1.25em 0 1.1875em;
+    height: 0
+}
+
+em, i {
+    font-style: italic;
+    line-height: inherit
+}
+
+strong, b {
+    font-weight: bold;
+    line-height: inherit
+}
+
+small {
+    font-size: 60%;
+    line-height: inherit
+}
+
+code {
+    font-family: "Droid Sans Mono", "DejaVu Sans Mono", monospace;
+    font-weight: 400;
+    color: rgba(0, 0, 0, .9)
+}
+
+ul, ol, dl {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 1.25em;
+    list-style-position: outside;
+    font-family: inherit
+}
+
+ul, ol {
+    margin-left: 1.5em
+}
+
+ul li ul, ul li ol {
+    margin-left: 1.25em;
+    margin-bottom: 0;
+    font-size: 1em
+}
+
+ul.square li ul, ul.circle li ul, ul.disc li ul {
+    list-style: inherit
+}
+
+ul.square {
+    list-style-type: square
+}
+
+ul.circle {
+    list-style-type: circle
+}
+
+ul.disc {
+    list-style-type: disc
+}
+
+ol li ul, ol li ol {
+    margin-left: 1.25em;
+    margin-bottom: 0
+}
+
+dl dt {
+    margin-bottom: .3125em;
+    font-weight: bold
+}
+
+dl dd {
+    margin-bottom: 1.25em
+}
 
 abbr, acronym {
     text-transform: uppercase;
@@ -516,16 +617,62 @@ p a > code:hover {
     padding-left: .9375em;
     padding-right: .9375em
 }
-#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
-#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
-#content{margin-top:1.25em}
-#content::before{content:none}
-#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
-#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
-#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
-#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
-#header .details span:first-child{margin-left:-.125em}
-#header .details span.email a{color:rgba(0,0,0,.85)}
+
+#header::before, #header::after, #content::before, #content::after, #footnotes::before, #footnotes::after, #footer::before, #footer::after {
+    content: " ";
+    display: table
+}
+
+#header::after, #content::after, #footnotes::after, #footer::after {
+    clear: both
+}
+
+#content {
+    margin-top: 1.25em
+}
+
+#content::before {
+    content: none
+}
+
+#header > h1:first-child {
+    color: rgba(0, 0, 0, .85);
+    margin-top: 2.25rem;
+    margin-bottom: 0
+}
+
+#header > h1:first-child + #toc {
+    margin-top: 8px;
+    border-top: 1px solid #dddddf
+}
+
+#header > h1:only-child, body.toc2 #header > h1:nth-last-child(2) {
+    border-bottom: 1px solid #dddddf;
+    padding-bottom: 8px
+}
+
+#header .details {
+    border-bottom: 1px solid #dddddf;
+    line-height: 1.45;
+    padding-top: .25em;
+    padding-bottom: .25em;
+    padding-left: .25em;
+    color: rgba(0, 0, 0, .6);
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap
+}
+
+#header .details span:first-child {
+    margin-left: -.125em
+}
+
+#header .details span.email a {
+    color: rgba(0, 0, 0, .85)
+}
 #header .details br{display:none}
 #header .details br+span::before{content:"\00a0\2013\00a0"}
 #header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
@@ -539,16 +686,67 @@ p a > code:hover {
 #toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
 #toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
 #toc li{line-height:1.3334;margin-top:.3334em}
-#toc a{text-decoration:none}
-#toc a:active{text-decoration:underline}
-#toctitle{color:#7a2518;font-size:1.2em}
-@media screen and (min-width:768px){#toctitle{font-size:1.375em}
-body.toc2{padding-left:15em;padding-right:0}
-#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
-#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
-#toc.toc2>ul{font-size:.9em;margin-bottom:0}
-#toc.toc2 ul ul{margin-left:0;padding-left:1em}
-#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+
+#toc a {
+    text-decoration: none
+}
+
+#toc a:active {
+    text-decoration: underline
+}
+
+#toctitle {
+    color: #7a2518;
+    font-size: 1.2em
+}
+
+@media screen and (min-width: 768px) {
+    #toctitle {
+        font-size: 1.375em
+    }
+
+    body.toc2 {
+        padding-left: 15em;
+        padding-right: 0
+    }
+
+    #toc.toc2 {
+        margin-top: 0 !important;
+        background: #f8f8f7;
+        position: fixed;
+        width: 15em;
+        left: 0;
+        top: 0;
+        border-right: 1px solid #e7e7e9;
+        border-top-width: 0 !important;
+        border-bottom-width: 0 !important;
+        z-index: 1000;
+        padding: 1.25em 1em;
+        height: 100%;
+        overflow: auto
+    }
+
+    #toc.toc2 #toctitle {
+        margin-top: 0;
+        margin-bottom: .8rem;
+        font-size: 1.2em
+    }
+
+    #toc.toc2 > ul {
+        font-size: .9em;
+        margin-bottom: 0
+    }
+
+    #toc.toc2 ul ul {
+        margin-left: 0;
+        padding-left: 1em
+    }
+
+    #toc.toc2 ul.sectlevel0 ul.sectlevel1 {
+        padding-left: 0;
+        margin-top: .5em;
+        margin-bottom: .5em
+    }
 
     body.toc2.toc-right {
         padding-left: 0;
@@ -859,25 +1057,117 @@ table.tableblock #preamble > .sectionbody > [class="paragraph"]:first-of-type p 
 .listingblock pre.highlightjs {
     padding: 0
 }
-.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
-.listingblock pre.prettyprint{border-width:0}
-.prettyprint{background:#f7f7f8}
-pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
-pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
-pre.prettyprint li code[data-lang]::before{opacity:1}
-pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
-table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
-table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
-table.linenotable td.code{padding-left:.75em}
-table.linenotable td.linenos{border-right:1px solid currentColor;opacity:.35;padding-right:.5em}
-pre.pygments .lineno{border-right:1px solid currentColor;opacity:.35;display:inline-block;margin-right:.75em}
-pre.pygments .lineno::before{content:"";margin-right:-.125em}
-.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
-.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
-.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
-.quoteblock blockquote{margin:0;padding:0;border:0}
-.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
-.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+
+.listingblock pre.highlightjs > code {
+    padding: 1em;
+    -webkit-border-radius: 4px;
+    border-radius: 4px
+}
+
+.listingblock pre.prettyprint {
+    border-width: 0
+}
+
+.prettyprint {
+    background: #f7f7f8
+}
+
+pre.prettyprint .linenums {
+    line-height: 1.45;
+    margin-left: 2em
+}
+
+pre.prettyprint li {
+    background: none;
+    list-style-type: inherit;
+    padding-left: 0
+}
+
+pre.prettyprint li code[data-lang]::before {
+    opacity: 1
+}
+
+pre.prettyprint li:not(:first-child) code[data-lang]::before {
+    display: none
+}
+
+table.linenotable {
+    border-collapse: separate;
+    border: 0;
+    margin-bottom: 0;
+    background: none
+}
+
+table.linenotable td[class] {
+    color: inherit;
+    vertical-align: top;
+    padding: 0;
+    line-height: inherit;
+    white-space: normal
+}
+
+table.linenotable td.code {
+    padding-left: .75em
+}
+
+table.linenotable td.linenos {
+    border-right: 1px solid currentColor;
+    opacity: .35;
+    padding-right: .5em
+}
+
+pre.pygments .lineno {
+    border-right: 1px solid currentColor;
+    opacity: .35;
+    display: inline-block;
+    margin-right: .75em
+}
+
+pre.pygments .lineno::before {
+    content: "";
+    margin-right: -.125em
+}
+
+.quoteblock {
+    margin: 0 1em 1.25em 1.5em;
+    display: table
+}
+
+.quoteblock:not(.excerpt) > .title {
+    margin-left: -1.5em;
+    margin-bottom: .75em
+}
+
+.quoteblock blockquote, .quoteblock p {
+    color: rgba(0, 0, 0, .85);
+    font-size: 1.15rem;
+    line-height: 1.75;
+    word-spacing: .1em;
+    letter-spacing: 0;
+    font-style: italic;
+    text-align: justify
+}
+
+.quoteblock blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0
+}
+
+.quoteblock blockquote::before {
+    content: "\201c";
+    float: left;
+    font-size: 2.75em;
+    font-weight: bold;
+    line-height: .6em;
+    margin-left: -.6em;
+    color: #7a2518;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .1)
+}
+
+.quoteblock blockquote > .paragraph:last-child p {
+    margin-bottom: 0
+}
 
 .quoteblock .attribution {
     margin-top: .75em;
@@ -1100,12 +1390,41 @@ ul.no-bullet, ol.no-bullet, ol.unnumbered {
 ul.unstyled, ol.unstyled {
     margin-left: 0
 }
-ul.checklist{margin-left:.625em}
-ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
-ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
-ul.inline{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
-ul.inline>li{margin-left:1.25em}
-.unstyled dl dt{font-weight:400;font-style:normal}
+
+ul.checklist {
+    margin-left: .625em
+}
+
+ul.checklist li > p:first-child > .fa-square-o:first-child, ul.checklist li > p:first-child > .fa-check-square-o:first-child {
+    width: 1.25em;
+    font-size: .8em;
+    position: relative;
+    bottom: .125em
+}
+
+ul.checklist li > p:first-child > input[type="checkbox"]:first-child {
+    margin-right: .25em
+}
+
+ul.inline {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    list-style: none;
+    margin: 0 0 .625em -1.25em
+}
+
+ul.inline > li {
+    margin-left: 1.25em
+}
+
+.unstyled dl dt {
+    font-weight: 400;
+    font-style: normal
+}
 
 ol.arabic {
     list-style-type: decimal
@@ -1210,16 +1529,58 @@ td.hdlist2 {
     display: inline-block;
     line-height: 0
 }
-.image.left{margin-right:.625em}
-.image.right{margin-left:.625em}
-a.image{text-decoration:none;display:inline-block}
-a.image object{pointer-events:none}
-sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
-sup.footnote a,sup.footnoteref a{text-decoration:none}
-sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
-#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
-#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
-#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+
+.image.left {
+    margin-right: .625em
+}
+
+.image.right {
+    margin-left: .625em
+}
+
+a.image {
+    text-decoration: none;
+    display: inline-block
+}
+
+a.image object {
+    pointer-events: none
+}
+
+sup.footnote, sup.footnoteref {
+    font-size: .875em;
+    position: static;
+    vertical-align: super
+}
+
+sup.footnote a, sup.footnoteref a {
+    text-decoration: none
+}
+
+sup.footnote a:active, sup.footnoteref a:active {
+    text-decoration: underline
+}
+
+#footnotes {
+    padding-top: .75em;
+    padding-bottom: .75em;
+    margin-bottom: .625em
+}
+
+#footnotes hr {
+    width: 20%;
+    min-width: 6.25em;
+    margin: -.25em 0 .75em;
+    border-width: 1px 0 0
+}
+
+#footnotes .footnote {
+    padding: 0 .375em 0 .225em;
+    line-height: 1.3334;
+    font-size: .875em;
+    margin-left: 1.2em;
+    margin-bottom: .2em
+}
 #footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
 #footnotes .footnote:last-of-type{margin-bottom:0}
 #content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
@@ -1250,16 +1611,46 @@ div.unbreakable{page-break-inside:avoid}
 .navy{color:#000060}
 .navy-background{background:#00007d}
 .olive{color:#606000}
-.olive-background{background:#7d7d00}
-.purple{color:#600060}
-.purple-background{background:#7d007d}
-.red{color:#bf0000}
-.red-background{background:#fa0000}
-.silver{color:#909090}
-.silver-background{background:#bcbcbc}
-.teal{color:#006060}
-.teal-background{background:#007d7d}
-.white{color:#bfbfbf}
+
+.olive-background {
+    background: #7d7d00
+}
+
+.purple {
+    color: #600060
+}
+
+.purple-background {
+    background: #7d007d
+}
+
+.red {
+    color: #bf0000
+}
+
+.red-background {
+    background: #fa0000
+}
+
+.silver {
+    color: #909090
+}
+
+.silver-background {
+    background: #bcbcbc
+}
+
+.teal {
+    color: #006060
+}
+
+.teal-background {
+    background: #007d7d
+}
+
+.white {
+    color: #bfbfbf
+}
 
 .white-background {
     background: #fafafa
@@ -1373,10 +1764,25 @@ p, blockquote, dt, td.content, span.alt {
 p {
     margin-bottom: 1.25rem
 }
-.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
-.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
-.print-only{display:none!important}
-@page{margin:1.25cm .75cm}
+
+.sidebarblock p, .sidebarblock dt, .sidebarblock td.content, p.tableblock {
+    font-size: 1em
+}
+
+.exampleblock > .content {
+    background: #fffef7;
+    border-color: #e0e0dc;
+    -webkit-box-shadow: 0 1px 4px #e0e0dc;
+    box-shadow: 0 1px 4px #e0e0dc
+}
+
+.print-only {
+    display: none !important
+}
+
+@page {
+    margin: 1.25cm .75cm
+}
 
 @media print {
     * {
@@ -1485,16 +1891,50 @@ p {
     .listingblock code[data-lang]::before {
         display: block
     }
-#footer{padding:0 .9375em}
-.hide-on-print{display:none!important}
-.print-only{display:block!important}
-.hide-for-print{display:none!important}
-.show-for-print{display:inherit!important}}
-@media print,amzn-kf8{#header>h1:first-child{margin-top:1.25rem}
-.sect1{padding:0!important}
-.sect1+.sect1{border:0}
-#footer{background:none}
-#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+
+    #footer {
+        padding: 0 .9375em
+    }
+
+    .hide-on-print {
+        display: none !important
+    }
+
+    .print-only {
+        display: block !important
+    }
+
+    .hide-for-print {
+        display: none !important
+    }
+
+    .show-for-print {
+        display: inherit !important
+    }
+}
+
+@media print, amzn-kf8 {
+    #header > h1:first-child {
+        margin-top: 1.25rem
+    }
+
+    .sect1 {
+        padding: 0 !important
+    }
+
+    .sect1 + .sect1 {
+        border: 0
+    }
+
+    #footer {
+        background: none
+    }
+
+    #footer-text {
+        color: rgba(0, 0, 0, .6);
+        font-size: .9em
+    }
+}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
@@ -1690,6 +2130,71 @@ set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableS
 <pre>a.b.c.i = 99 =&gt; will throw this error if b is null :
 -&gt; Exception in thread "main" java.lang.NullPointerException:
    Cannot read field "c" because "a.b" is null at Prog.main(Prog.java:5)</pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Code Example :</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">public</span> <span
+        style="color:#088;font-weight:bold">static</span> <span
+        style="color:#339;font-weight:bold">void</span> main(<span
+        style="color:#0a8;font-weight:bold">String</span><span style="color:#339;font-weight:bold">[]</span> args) {
+    <span style="color:#339;font-weight:bold">var</span> b = <span
+            style="color:#080;font-weight:bold">new</span> B(<span style="color:#069">null</span>);
+    <span style="color:#339;font-weight:bold">var</span> c = <span style="color:#080;font-weight:bold">new</span> C(b);
+    c.getB().getA().getNumber();<span style="color:#777">//Will throw a NullPointerException</span>
+}
+
+<span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">static</span> <span
+            style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">A</span> {
+    <span style="color:#088;font-weight:bold">private</span> <span
+            style="color:#088;font-weight:bold">final</span> <span style="color:#0a8;font-weight:bold">Integer</span> number;
+
+    <span style="color:#088;font-weight:bold">private</span> A(<span style="color:#0a8;font-weight:bold">Integer</span> number) {
+        <span style="color:#950">this</span>.number = number;
+    }
+
+    <span style="color:#088;font-weight:bold">public</span> <span style="color:#0a8;font-weight:bold">Integer</span> getNumber() {
+        <span style="color:#080;font-weight:bold">return</span> number;
+    }
+}
+
+<span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">static</span> <span
+            style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">B</span> {
+    <span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">final</span> A a;
+
+    <span style="color:#088;font-weight:bold">private</span> B(A a) {
+        <span style="color:#950">this</span>.a = a;
+    }
+
+    <span style="color:#088;font-weight:bold">public</span> A getA() {
+        <span style="color:#080;font-weight:bold">return</span> a;
+    }
+}
+
+<span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">static</span> <span
+            style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">C</span> {
+    <span style="color:#088;font-weight:bold">public</span> B getB() {
+        <span style="color:#080;font-weight:bold">return</span> b;
+    }
+
+    <span style="color:#088;font-weight:bold">private</span> <span style="color:#088;font-weight:bold">final</span> B b;
+
+    <span style="color:#088;font-weight:bold">private</span> C(B b) {
+        <span style="color:#950">this</span>.b = b;
+    }
+}</code></pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Will raise the following exception :</p>
+                </div>
+                <div class="literalblock">
+                    <div class="content">
+<pre>Exception in thread "main" java.lang.NullPointerException: Cannot invoke "NullExample$A.getNumber()" because the return value of "NullExample$B.getA()" is null
+	at NullExample.main(NullExample.java:8)</pre>
                     </div>
                 </div>
             </div>
