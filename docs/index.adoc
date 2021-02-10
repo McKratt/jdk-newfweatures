@@ -1,4 +1,6 @@
 = Tracking Changes in JDK
+
+:source-highlighter: highlight.js
 :sourcedir: ../src/main/java/net/bakaar/jdk/demo
 :toc:
 
