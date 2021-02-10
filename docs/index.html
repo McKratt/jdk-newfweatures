@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.10">
+<meta content="Asciidoctor 2.0.12" name="generator">
 <title>Tracking Changes in JDK</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -46,9 +46,31 @@ button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
 textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
 *,*::before,*::after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
-html,body{font-size:100%}
-body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
-a:hover{cursor:pointer}
+
+html, body {
+    font-size: 100%
+}
+
+body {
+    background: #fff;
+    color: rgba(0, 0, 0, .8);
+    padding: 0;
+    margin: 0;
+    font-family: "Noto Serif", "DejaVu Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1;
+    position: relative;
+    cursor: auto;
+    tab-size: 4;
+    word-wrap: anywhere;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased
+}
+
+a:hover {
+    cursor: pointer
+}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
 img{-ms-interpolation-mode:bicubic}
@@ -62,11 +84,25 @@ img{-ms-interpolation-mode:bicubic}
 img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
-.center{margin-left:auto;margin-right:auto}
-.stretch{width:100%}
-.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
-div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
-a{color:#2156a5;text-decoration:underline;line-height:inherit}
+
+.subheader, .admonitionblock td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title {
+    line-height: 1.45;
+    color: #7a2518;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: .25em
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6, pre, form, p, blockquote, th, td {
+    margin: 0;
+    padding: 0
+}
+
+a {
+    color: #2156a5;
+    text-decoration: underline;
+    line-height: inherit
+}
 a:hover,a:focus{color:#1d4b8f}
 a img{border:0}
 p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
@@ -103,31 +139,161 @@ blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
 @media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
 h1{font-size:2.75em}
 h2{font-size:2.3125em}
-h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
-h4{font-size:1.4375em}}
-table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
-table thead,table tfoot{background:#f7f8f7}
-table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
-table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
-table tr.even,table tr.alt{background:#f8f8f7}
-table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
-h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
-h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
-.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
-.clearfix::after,.float-group::after{clear:both}
-:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
-:not(pre)>code.nobreak{word-wrap:normal}
-:not(pre)>code.nowrap{white-space:nowrap}
-pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
-pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
-pre>code{display:block}
-pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
-em em{font-style:normal}
-strong strong{font-weight:400}
-.keyseq{color:rgba(51,51,51,.8)}
-kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
-.keyseq kbd:first-child{margin-left:0}
-.keyseq kbd:last-child{margin-right:0}
+
+    h3, #toctitle, .sidebarblock > .content > .title {
+        font-size: 1.6875em
+    }
+
+    h4 {
+        font-size: 1.4375em
+    }
+}
+
+table {
+    background: #fff;
+    margin-bottom: 1.25em;
+    border: solid 1px #dedede;
+    word-wrap: normal
+}
+
+table thead, table tfoot {
+    background: #f7f8f7
+}
+
+table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td {
+    padding: .5em .625em .625em;
+    font-size: inherit;
+    color: rgba(0, 0, 0, .8);
+    text-align: left
+}
+
+table tr th, table tr td {
+    padding: .5625em .625em;
+    font-size: inherit;
+    color: rgba(0, 0, 0, .8)
+}
+
+table tr.even, table tr.alt {
+    background: #f8f8f7
+}
+
+table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
+    line-height: 1.6
+}
+
+h1, h2, h3, #toctitle, .sidebarblock > .content > .title, h4, h5, h6 {
+    line-height: 1.2;
+    word-spacing: -.05em
+}
+
+h1 strong, h2 strong, h3 strong, #toctitle strong, .sidebarblock > .content > .title strong, h4 strong, h5 strong, h6 strong {
+    font-weight: 400
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto
+}
+
+.stretch {
+    width: 100%
+}
+
+.clearfix::before, .clearfix::after, .float-group::before, .float-group::after {
+    content: " ";
+    display: table
+}
+
+.clearfix::after, .float-group::after {
+    clear: both
+}
+
+:not(pre).nobreak {
+    word-wrap: normal
+}
+
+:not(pre).nowrap {
+    white-space: nowrap
+}
+
+:not(pre).pre-wrap {
+    white-space: pre-wrap
+}
+
+:not(pre):not([class^=L]) > code {
+    font-size: .9375em;
+    font-style: normal !important;
+    letter-spacing: 0;
+    padding: .1em .5ex;
+    word-spacing: -.15em;
+    background: #f7f7f8;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    line-height: 1.45;
+    text-rendering: optimizeSpeed
+}
+
+pre {
+    color: rgba(0, 0, 0, .9);
+    font-family: "Droid Sans Mono", "DejaVu Sans Mono", monospace;
+    line-height: 1.45;
+    text-rendering: optimizeSpeed
+}
+
+pre code, pre pre {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit
+}
+
+pre > code {
+    display: block
+}
+
+pre.nowrap, pre.nowrap pre {
+    white-space: pre;
+    word-wrap: normal
+}
+
+em em {
+    font-style: normal
+}
+
+strong strong {
+    font-weight: 400
+}
+
+.keyseq {
+    color: rgba(51, 51, 51, .8)
+}
+
+kbd {
+    font-family: "Droid Sans Mono", "DejaVu Sans Mono", monospace;
+    display: inline-block;
+    color: rgba(0, 0, 0, .8);
+    font-size: .65em;
+    line-height: 1.45;
+    background: #f7f7f7;
+    border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 0 0 .1em white inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .2), 0 0 0 .1em #fff inset;
+    margin: 0 .15em;
+    padding: .2em .5em;
+    vertical-align: middle;
+    position: relative;
+    top: -.1em;
+    white-space: nowrap
+}
+
+.keyseq kbd:first-child {
+    margin-left: 0
+}
+
+.keyseq kbd:last-child {
+    margin-right: 0
+}
 .menuseq,.menuref{color:#000}
 .menuseq b:not(.caret),.menuref{font-weight:inherit}
 .menuseq{word-spacing:-.02em}
@@ -181,9 +347,21 @@ body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9
 body.toc2.toc-right{padding-left:0;padding-right:20em}}
 #content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
 #content #toc>:first-child{margin-top:0}
-#content #toc>:last-child{margin-bottom:0}
-#footer{max-width:100%;background:rgba(0,0,0,.8);padding:1.25em}
-#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+
+#content #toc > :last-child {
+    margin-bottom: 0
+}
+
+#footer {
+    max-width: none;
+    background: rgba(0, 0, 0, .8);
+    padding: 1.25em
+}
+
+#footer-text {
+    color: rgba(255, 255, 255, .8);
+    line-height: 1.44
+}
 #content{margin-bottom:.625em}
 .sect1{padding-bottom:.625em}
 @media screen and (min-width:768px){#content{margin-bottom:1.25em}
@@ -204,9 +382,24 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font
 .admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
 .admonitionblock>table td.icon{text-align:center;width:80px}
 .admonitionblock>table td.icon img{max-width:none}
-.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
-.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6)}
-.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+
+.admonitionblock > table td.icon .title {
+    font-weight: bold;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    text-transform: uppercase
+}
+
+.admonitionblock > table td.content {
+    padding-left: 1.125em;
+    padding-right: 1.25em;
+    border-left: 1px solid #dddddf;
+    color: rgba(0, 0, 0, .6);
+    word-wrap: anywhere
+}
+
+.admonitionblock > table td.content > :last-child > :last-child {
+    margin-bottom: 0
+}
 .exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
 .exampleblock>.content>:first-child{margin-top:0}
 .exampleblock>.content>:last-child{margin-bottom:0}
@@ -214,8 +407,18 @@ table.tableblock #preamble>.sectionbody>[class="paragraph"]:first-of-type p{font
 .sidebarblock>:first-child{margin-top:0}
 .sidebarblock>:last-child{margin-bottom:0}
 .sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
-.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
-.literalblock pre,.listingblock>.content>pre{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;overflow-x:auto;padding:1em;font-size:.8125em}
+
+.exampleblock > .content > :last-child > :last-child, .exampleblock > .content .olist > ol > li:last-child > :last-child, .exampleblock > .content .ulist > ul > li:last-child > :last-child, .exampleblock > .content .qlist > ol > li:last-child > :last-child, .sidebarblock > .content > :last-child > :last-child, .sidebarblock > .content .olist > ol > li:last-child > :last-child, .sidebarblock > .content .ulist > ul > li:last-child > :last-child, .sidebarblock > .content .qlist > ol > li:last-child > :last-child {
+    margin-bottom: 0
+}
+
+.literalblock pre, .listingblock > .content > pre {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    overflow-x: auto;
+    padding: 1em;
+    font-size: .8125em
+}
 @media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
 @media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
 .literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class="highlight"],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
@@ -255,37 +458,135 @@ pre.pygments .lineno::before{content:"";margin-right:-.125em}
 .quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
 .quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
 .quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
-.quoteblock.abstract{margin:0 1em 1.25em;display:block}
-.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
-.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
-.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
-.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
-.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;text-align:left;margin-right:0}
-table.tableblock{max-width:100%;border-collapse:separate}
-p.tableblock:last-child{margin-bottom:0}
-td.tableblock>.content>:last-child{margin-bottom:-1.25em}
-td.tableblock>.content>:last-child.sidebarblock{margin-bottom:0}
-table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
-table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
-table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
-table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
-table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px}
-table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0}
-table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
-table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
-table.frame-all{border-width:1px}
-table.frame-sides{border-width:0 1px}
-table.frame-topbot,table.frame-ends{border-width:1px 0}
-table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
-th.halign-left,td.halign-left{text-align:left}
-th.halign-right,td.halign-right{text-align:right}
-th.halign-center,td.halign-center{text-align:center}
-th.valign-top,td.valign-top{vertical-align:top}
-th.valign-bottom,td.valign-bottom{vertical-align:bottom}
-th.valign-middle,td.valign-middle{vertical-align:middle}
-table thead th,table tfoot th{font-weight:bold}
-tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
-tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+
+.quoteblock.abstract {
+    margin: 0 1em 1.25em;
+    display: block
+}
+
+.quoteblock.abstract > .title {
+    margin: 0 0 .375em;
+    font-size: 1.15em;
+    text-align: center
+}
+
+.quoteblock.excerpt > blockquote, .quoteblock .quoteblock {
+    padding: 0 0 .25em 1em;
+    border-left: .25em solid #dddddf
+}
+
+.quoteblock.excerpt, .quoteblock .quoteblock {
+    margin-left: 0
+}
+
+.quoteblock.excerpt blockquote, .quoteblock.excerpt p, .quoteblock .quoteblock blockquote, .quoteblock .quoteblock p {
+    color: inherit;
+    font-size: 1.0625rem
+}
+
+.quoteblock.excerpt .attribution, .quoteblock .quoteblock .attribution {
+    color: inherit;
+    text-align: left;
+    margin-right: 0
+}
+
+p.tableblock:last-child {
+    margin-bottom: 0
+}
+
+td.tableblock > .content {
+    margin-bottom: 1.25em;
+    word-wrap: anywhere
+}
+
+td.tableblock > .content > :last-child {
+    margin-bottom: -1.25em
+}
+
+table.tableblock, th.tableblock, td.tableblock {
+    border: 0 solid #dedede
+}
+
+table.grid-all > * > tr > * {
+    border-width: 1px
+}
+
+table.grid-cols > * > tr > * {
+    border-width: 0 1px
+}
+
+table.grid-rows > * > tr > * {
+    border-width: 1px 0
+}
+
+table.frame-all {
+    border-width: 1px
+}
+
+table.frame-ends {
+    border-width: 1px 0
+}
+
+table.frame-sides {
+    border-width: 0 1px
+}
+
+table.frame-none > colgroup + * > :first-child > *, table.frame-sides > colgroup + * > :first-child > * {
+    border-top-width: 0
+}
+
+table.frame-none > :last-child > :last-child > *, table.frame-sides > :last-child > :last-child > * {
+    border-bottom-width: 0
+}
+
+table.frame-none > * > tr > :first-child, table.frame-ends > * > tr > :first-child {
+    border-left-width: 0
+}
+
+table.frame-none > * > tr > :last-child, table.frame-ends > * > tr > :last-child {
+    border-right-width: 0
+}
+
+table.stripes-all tr, table.stripes-odd tr:nth-of-type(odd), table.stripes-even tr:nth-of-type(even), table.stripes-hover tr:hover {
+    background: #f8f8f7
+}
+
+th.halign-left, td.halign-left {
+    text-align: left
+}
+
+th.halign-right, td.halign-right {
+    text-align: right
+}
+
+th.halign-center, td.halign-center {
+    text-align: center
+}
+
+th.valign-top, td.valign-top {
+    vertical-align: top
+}
+
+th.valign-bottom, td.valign-bottom {
+    vertical-align: bottom
+}
+
+th.valign-middle, td.valign-middle {
+    vertical-align: middle
+}
+
+table thead th, table tfoot th {
+    font-weight: bold
+}
+
+tbody tr th {
+    background: #f7f8f7
+}
+
+tbody tr th, tbody tr th p, tfoot tr th, tfoot tr th p {
+    color: rgba(0, 0, 0, .8);
+    font-weight: bold
+}
 p.tableblock>code:only-child{background:none;padding:0}
 p.tableblock{font-size:1em}
 ol{margin-left:1.75em}
@@ -312,8 +613,19 @@ ol.lowergreek{list-style-type:lower-greek}
 .hdlist>table,.colist>table{border:0;background:none}
 .hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
 td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
-td.hdlist1{font-weight:bold;padding-bottom:1.25em}
-.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+
+td.hdlist1 {
+    font-weight: bold;
+    padding-bottom: 1.25em
+}
+
+td.hdlist2 {
+    word-wrap: anywhere
+}
+
+.literalblock + .colist, .listingblock + .colist {
+    margin-top: -.5em
+}
 .colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
 .colist td:not([class]):first-child img{max-width:none}
 .colist td:not([class]):last-child{padding:.25em 0}
@@ -384,9 +696,31 @@ a span.icon>.fa{cursor:inherit}
 .admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
 .admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
 .admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
-.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
-.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
-.conum[data-value] *{color:#fff!important}
+
+.admonitionblock td.icon .icon-important::before {
+    content: "\f06a";
+    color: #bf0000
+}
+
+.conum[data-value] {
+    display: inline-block;
+    color: #fff !important;
+    background: rgba(0, 0, 0, .8);
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+    font-size: .75em;
+    width: 1.67em;
+    height: 1.67em;
+    line-height: 1.67em;
+    font-family: "Open Sans", "DejaVu Sans", sans-serif;
+    font-style: normal;
+    font-weight: bold
+}
+
+.conum[data-value] * {
+    color: #fff !important
+}
 .conum[data-value]+b{display:none}
 .conum[data-value]::after{content:attr(data-value)}
 pre .conum[data-value]{position:relative;top:-.125em}
@@ -411,8 +745,18 @@ pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
 thead{display:table-header-group}
 svg{max-width:100%}
 p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
-h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
-#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+
+    h2, h3, #toctitle, .sidebarblock > .content > .title {
+        page-break-after: avoid
+    }
+
+    #header, #content, #footnotes, #footer {
+        max-width: none
+    }
+
+    #toc, .sidebarblock, .exampleblock > .content {
+        background: none !important
+    }
 #toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
 body.book #header{text-align:center}
 body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
@@ -436,17 +780,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 </head>
-<body class="article data-line-1">
+<body class="article">
 <div id="header">
-<h1>Tracking Changes in JDK</h1>
-<div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_new_feature_in_jdk_11">New Feature in JDK 11</a>
-<ul class="sectlevel2">
-<li><a href="#_convenience_factory_methods_for_collections">Convenience Factory Methods for Collections</a></li>
-<li><a href="#_local_variable_var_for_lambda">Local Variable (var) for lambda</a></li>
-<li><a href="#_new_apis">New APIs</a></li>
+    <h1>Tracking Changes in JDK</h1>
+    <div id="toc" class="toc">
+        <div id="toctitle">Table of Contents</div>
+        <ul class="sectlevel1">
+            <li><a href="#_new_feature_in_jdk_11">New Feature in JDK 11</a>
+                <ul class="sectlevel2">
+                    <li><a href="#_convenience_factory_methods_for_collections">Convenience Factory Methods for
+                        Collections</a></li>
+                    <li><a href="#_local_variable_var_for_lambda">Local Variable (var) for lambda</a></li>
+                    <li><a href="#_new_apis">New APIs</a></li>
 <li><a href="#_java_ee_and_corba_modules_removal">Java EE and CORBA modules removal</a></li>
 </ul>
 </li>
@@ -478,538 +823,628 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<div class="sect1 data-line-1">
-<h2 id="_new_feature_in_jdk_11">New Feature in JDK 11</h2>
-<div class="sectionbody">
-<div class="sect2 data-line-4">
-<h3 id="_convenience_factory_methods_for_collections">Convenience Factory Methods for Collections</h3>
-<div class="ulist data-line-6">
-<ul>
-<li class="data-line-6">
-<p>added in Jdk 9</p>
-</li>
-<li class="data-line-7">
-<p>allow to build collection from Array with simple methods</p>
-</li>
-<li class="data-line-8">
-<p>Created Collection are immutables</p>
-</li>
+    <div class="sect1">
+        <h2 id="_new_feature_in_jdk_11">New Feature in JDK 11</h2>
+        <div class="sectionbody">
+            <div class="sect2">
+                <h3 id="_convenience_factory_methods_for_collections">Convenience Factory Methods for Collections</h3>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>added in Jdk 9</p>
+                        </li>
+                        <li>
+                            <p>allow to build collection from Array with simple methods</p>
+                        </li>
+                        <li>
+                            <p>Created Collection are immutables</p>
+                        </li>
 </ul>
 </div>
-<div class="paragraph data-line-10">
-<p>Code example before:</p>
+                <div class="paragraph">
+                    <p>Code example before:</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#0a8;font-weight:bold">Set</span>&lt;<span
+        style="color:#0a8;font-weight:bold">String</span>&gt; set = <span style="color:#080;font-weight:bold">new</span> <span
+        style="color:#0a8;font-weight:bold">HashSet</span>&lt;&gt;();
+set.add(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">a</span><span style="color:#710">&quot;</span></span>);
+set.add(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">b</span><span style="color:#710">&quot;</span></span>);
+set.add(<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">c</span><span style="color:#710">&quot;</span></span>);
+set = <span style="color:#0a8;font-weight:bold">Collections</span>.unmodifiableSet(set);</code></pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Code example after:</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+                        <pre class="CodeRay highlight"><code data-lang="java"><span style="color:#0a8;font-weight:bold">Set</span>&lt;<span
+                                style="color:#0a8;font-weight:bold">String</span>&gt; set = <span
+                                style="color:#0a8;font-weight:bold">Set</span>.of(<span
+                                style="background-color:hsla(0,100%,50%,0.05)"><span
+                                style="color:#710">&quot;</span><span style="color:#D20">a</span><span
+                                style="color:#710">&quot;</span></span>, <span
+                                style="background-color:hsla(0,100%,50%,0.05)"><span
+                                style="color:#710">&quot;</span><span style="color:#D20">b</span><span
+                                style="color:#710">&quot;</span></span>, <span
+                                style="background-color:hsla(0,100%,50%,0.05)"><span
+                                style="color:#710">&quot;</span><span style="color:#D20">c</span><span
+                                style="color:#710">&quot;</span></span>);</code></pre>
+                    </div>
+                </div>
 </div>
-<div class="listingblock data-line-13">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Set&lt;String&gt; set = new HashSet&lt;&gt;();
-set.add("a");
-set.add("b");
-set.add("c");
-set = Collections.unmodifiableSet(set);</code></pre>
-</div>
-</div>
-<div class="paragraph data-line-21">
-<p>Code example after:</p>
-</div>
-<div class="listingblock data-line-24">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Set&lt;String&gt; set = Set.of("a", "b", "c");</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2 data-line-28">
-<h3 id="_local_variable_var_for_lambda">Local Variable (var) for lambda</h3>
-<div class="ulist data-line-30">
-<ul>
-<li class="data-line-30">
-<p>added in Jdk 10</p>
-</li>
-<li class="data-line-31">
-<p>type inference</p>
-</li>
-<li class="data-line-32">
-<p>usable in lambda expression</p>
-</li>
+            <div class="sect2">
+                <h3 id="_local_variable_var_for_lambda">Local Variable (var) for lambda</h3>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>added in Jdk 10</p>
+                        </li>
+                        <li>
+                            <p>type inference</p>
+                        </li>
+                        <li>
+                            <p>usable in lambda expression</p>
+                        </li>
 </ul>
 </div>
-<div class="paragraph data-line-34">
-<p>Code example before jdk 11 :</p>
-</div>
-<div class="listingblock data-line-7">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">private void localVarBefore11() {
-    List&lt;String&gt; myList = new ArrayList&lt;&gt;();
-    for (String myString : myList) {
-        System.out.println(myString);
+                <div class="paragraph">
+                    <p>Code example before jdk 11 :</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">private</span> <span
+        style="color:#339;font-weight:bold">void</span> localVarBefore11() {
+    <span style="color:#0a8;font-weight:bold">List</span>&lt;<span style="color:#0a8;font-weight:bold">String</span>&gt; myList = <span
+            style="color:#080;font-weight:bold">new</span> <span style="color:#0a8;font-weight:bold">ArrayList</span>&lt;&gt;();
+    <span style="color:#080;font-weight:bold">for</span> (<span style="color:#0a8;font-weight:bold">String</span> myString : myList) {
+        <span style="color:#0a8;font-weight:bold">System</span>.out.println(myString);
     }
 }</code></pre>
-</div>
-</div>
-<div class="paragraph data-line-40">
-<p>Same Code with local variable:</p>
-</div>
-<div class="listingblock data-line-16">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">private void localVarAfter11() {
-    var myList = new ArrayList&lt;String&gt;();
-    for (var myString : myList) {
-        System.out.println(myString);
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Same Code with local variable:</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">private</span> <span
+        style="color:#339;font-weight:bold">void</span> localVarAfter11() {
+    <span style="color:#339;font-weight:bold">var</span> myList = <span
+            style="color:#080;font-weight:bold">new</span> <span style="color:#0a8;font-weight:bold">ArrayList</span>&lt;<span
+            style="color:#0a8;font-weight:bold">String</span>&gt;();
+    <span style="color:#080;font-weight:bold">for</span> (<span style="color:#339;font-weight:bold">var</span> myString : myList) {
+        <span style="color:#0a8;font-weight:bold">System</span>.out.println(myString);
     }
 }</code></pre>
-</div>
-</div>
-<div class="paragraph data-line-46">
-<p><span class="underline"><strong>NOTES</strong></span></p>
-</div>
-<div class="ulist data-line-48">
-<ul>
-<li class="data-line-48">
-<p>The use of local variable as parameter of the method is not allowed.It works only for lambda.</p>
-</li>
-<li class="data-line-49">
-<p><code>var myList;</code> doesn&#8217;t work because there is no type to infer here.</p>
-</li>
-<li class="data-line-51">
-<p><strong>Warning !</strong> it can hide the actual type if name of the variable not adequate, ex : <code>var x = getX();</code>.It is correct in term of compilation but for the reader it hides the actual type of x.</p>
-</li>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p><span class="underline"><strong>NOTES</strong></span></p>
+                </div>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>The use of local variable as parameter of the method is not allowed.It works only for
+                                lambda.</p>
+                        </li>
+                        <li>
+                            <p><code>var myList;</code> doesn&#8217;t work because there is no type to infer here.</p>
+                        </li>
+                        <li>
+                            <p><strong>Warning !</strong> it can hide the actual type if name of the variable not
+                                adequate, ex : <code>var x = getX();</code>.It is correct in term of compilation but for
+                                the reader it hides the actual type of x.</p>
+                        </li>
 </ul>
 </div>
 </div>
-<div class="sect2 data-line-53">
-<h3 id="_new_apis">New APIs</h3>
-<div class="paragraph data-line-55">
-<p>There are some new method for <code>String</code>, <code>Optional</code> and <code>Collections</code></p>
-</div>
-<div class="paragraph data-line-57">
-<p>See <a href="https://dzone.com/articles/90-new-features-and-apis-in-jdk-11">this article</a> for details</p>
-</div>
-</div>
-<div class="sect2 data-line-59">
-<h3 id="_java_ee_and_corba_modules_removal">Java EE and CORBA modules removal</h3>
-<div class="paragraph data-line-61">
-<p>The following packages are no more part of the JDK :</p>
-</div>
-<div class="ulist data-line-63">
-<ul>
-<li class="data-line-63">
-<p>java.xml.ws (JAXWS)</p>
-</li>
-<li class="data-line-64">
-<p>java.xml.bind (JAXB)</p>
-</li>
-<li class="data-line-65">
-<p>java.activation (JAF)</p>
-</li>
-<li class="data-line-66">
-<p>java.xml.ws.annotation</p>
-</li>
-<li class="data-line-67">
-<p>java.corba</p>
-</li>
-<li class="data-line-68">
-<p>java.transation (JTA)</p>
-</li>
+            <div class="sect2">
+                <h3 id="_new_apis">New APIs</h3>
+                <div class="paragraph">
+                    <p>There are some new method for <code>String</code>, <code>Optional</code> and
+                        <code>Collections</code></p>
+                </div>
+                <div class="paragraph">
+                    <p>See <a href="https://dzone.com/articles/90-new-features-and-apis-in-jdk-11">this article</a> for
+                        details</p>
+                </div>
+            </div>
+            <div class="sect2">
+                <h3 id="_java_ee_and_corba_modules_removal">Java EE and CORBA modules removal</h3>
+                <div class="paragraph">
+                    <p>The following packages are no more part of the JDK :</p>
+                </div>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>java.xml.ws (JAXWS)</p>
+                        </li>
+                        <li>
+                            <p>java.xml.bind (JAXB)</p>
+                        </li>
+                        <li>
+                            <p>java.activation (JAF)</p>
+                        </li>
+                        <li>
+                            <p>java.xml.ws.annotation</p>
+                        </li>
+                        <li>
+                            <p>java.corba</p>
+                        </li>
+                        <li>
+                            <p>java.transation (JTA)</p>
+                        </li>
 </ul>
 </div>
-<div class="paragraph data-line-70">
-<p><span class="underline"><strong>NOTES</strong></span></p>
+                <div class="paragraph">
+                    <p><span class="underline"><strong>NOTES</strong></span></p>
+                </div>
+                <div class="paragraph">
+                    <p>There are maven artifacts containing these packages, see : <a
+                            href="https://openjdk.java.net/jeps/320" class="bare">https://openjdk.java.net/jeps/320</a>
+                        for the whole list, but not all the versions are available !</p>
+                </div>
 </div>
-<div class="paragraph data-line-5">
-<p>There are maven artifacts containing these packages, see : <a href="https://openjdk.java.net/jeps/320" class="bare">https://openjdk.java.net/jeps/320</a> for the whole list, but not all the versions are available !</p>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1 data-line-1">
-<h2 id="_new_features_in_jdk_14">New Features in JDK 14</h2>
-<div class="sectionbody">
-<div class="sect2 data-line-4">
-<h3 id="_clear_nullpointerexception">Clear NullPointerException</h3>
-<div class="ulist data-line-6">
-<ul>
-<li class="data-line-6">
-<p>Add clearer message when chained method call</p>
-</li>
-</ul>
-</div>
-<div class="literalblock data-line-8">
-<div class="content">
+    <div class="sect1">
+        <h2 id="_new_features_in_jdk_14">New Features in JDK 14</h2>
+        <div class="sectionbody">
+            <div class="sect2">
+                <h3 id="_clear_nullpointerexception">Clear NullPointerException</h3>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>Add clearer message when chained method call</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="literalblock">
+                    <div class="content">
 <pre>a.b.c.i = 99 =&gt; will throw this error if b is null :
 -&gt; Exception in thread "main" java.lang.NullPointerException:
    Cannot read field "c" because "a.b" is null at Prog.main(Prog.java:5)</pre>
+                    </div>
+                </div>
 </div>
-</div>
-</div>
-<div class="sect2 data-line-14">
-<h3 id="_records_preview">Records (preview)</h3>
-<div class="paragraph data-line-16">
-<p>see jdk 15</p>
-</div>
-</div>
-<div class="sect2 data-line-18">
-<h3 id="_pattern_matching_instanceof_preview">Pattern Matching instanceof (preview)</h3>
-<div class="paragraph data-line-20">
-<p>see jdk 15</p>
-</div>
-</div>
-<div class="sect2 data-line-22">
-<h3 id="_switch_expression">Switch expression</h3>
-<div class="ulist data-line-24">
-<ul>
-<li class="data-line-24">
-<p>added in jdk 12</p>
-</li>
-<li class="data-line-25">
-<p><code>&#8594;</code> operator, no need of <code>break;</code> anymore</p>
-</li>
-<li class="data-line-26">
-<p>can return a value</p>
-</li>
-<li class="data-line-27">
-<p>if multiple statement then use <code>yield</code> keyword to return value</p>
-</li>
-<li class="data-line-28">
-<p>if arrow operator is not use, <code>yield</code> keyword act as return (+ break)</p>
-</li>
+            <div class="sect2">
+                <h3 id="_records_preview">Records (preview)</h3>
+                <div class="paragraph">
+                    <p>see jdk 15</p>
+                </div>
+            </div>
+            <div class="sect2">
+                <h3 id="_pattern_matching_instanceof_preview">Pattern Matching instanceof (preview)</h3>
+                <div class="paragraph">
+                    <p>see jdk 15</p>
+                </div>
+            </div>
+            <div class="sect2">
+                <h3 id="_switch_expression">Switch expression</h3>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>added in jdk 12</p>
+                        </li>
+                        <li>
+                            <p><code>&#8594;</code> operator, no need of <code>break;</code> anymore</p>
+                        </li>
+                        <li>
+                            <p>can return a value</p>
+                        </li>
+                        <li>
+                            <p>if multiple statement then use <code>yield</code> keyword to return value</p>
+                        </li>
+                        <li>
+                            <p>if arrow operator is not use, <code>yield</code> keyword act as return (+ break)</p>
+                        </li>
 </ul>
 </div>
-<div class="paragraph data-line-30">
-<p>Code example before :</p>
-</div>
-<div class="listingblock data-line-8">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">switch (day) {
-    case MONDAY:
-    case FRIDAY:
-    case SUNDAY:
-        System.out.println(6);
-        break;
-    case TUESDAY:
-        System.out.println(7);
-        break;
-    case THURSDAY:
-    case SATURDAY:
-        System.out.println(8);
-        break;
-    case WEDNESDAY:
-        System.out.println(9);
-        break;
+                <div class="paragraph">
+                    <p>Code example before :</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">switch</span> (day) {
+    <span style="color:#080;font-weight:bold">case</span> MONDAY:
+    <span style="color:#080;font-weight:bold">case</span> FRIDAY:
+    <span style="color:#080;font-weight:bold">case</span> SUNDAY:
+        <span style="color:#0a8;font-weight:bold">System</span>.out.println(<span style="color:#00D">6</span>);
+        <span style="color:#080;font-weight:bold">break</span>;
+    <span style="color:#080;font-weight:bold">case</span> TUESDAY:
+        <span style="color:#0a8;font-weight:bold">System</span>.out.println(<span style="color:#00D">7</span>);
+        <span style="color:#080;font-weight:bold">break</span>;
+    <span style="color:#080;font-weight:bold">case</span> THURSDAY:
+    <span style="color:#080;font-weight:bold">case</span> SATURDAY:
+        <span style="color:#0a8;font-weight:bold">System</span>.out.println(<span style="color:#00D">8</span>);
+        <span style="color:#080;font-weight:bold">break</span>;
+    <span style="color:#080;font-weight:bold">case</span> WEDNESDAY:
+        <span style="color:#0a8;font-weight:bold">System</span>.out.println(<span style="color:#00D">9</span>);
+        <span style="color:#080;font-weight:bold">break</span>;
 }</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-36">
-<p>Code example with yield:</p>
-</div>
-<div class="listingblock data-line-31">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">System.out.println(switch (day) {
-    case MONDAY:
-    case FRIDAY:
-    case SUNDAY:
-        yield 6;
-    case TUESDAY:
-        yield 7;
-    case THURSDAY:
-    case SATURDAY:
-        yield 8;
-    case WEDNESDAY:
-        yield 9;
+                <div class="paragraph">
+                    <p>Code example with yield:</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#0a8;font-weight:bold">System</span>.out.println(<span
+        style="color:#080;font-weight:bold">switch</span> (day) {
+    <span style="color:#080;font-weight:bold">case</span> MONDAY:
+    <span style="color:#080;font-weight:bold">case</span> FRIDAY:
+    <span style="color:#080;font-weight:bold">case</span> SUNDAY:
+        yield <span style="color:#00D">6</span>;
+    <span style="color:#080;font-weight:bold">case</span> TUESDAY:
+        yield <span style="color:#00D">7</span>;
+    <span style="color:#080;font-weight:bold">case</span> THURSDAY:
+    <span style="color:#080;font-weight:bold">case</span> SATURDAY:
+        yield <span style="color:#00D">8</span>;
+    <span style="color:#080;font-weight:bold">case</span> WEDNESDAY:
+        yield <span style="color:#00D">9</span>;
 });</code></pre>
 </div>
 </div>
-<div class="paragraph data-line-42">
-<p>Code example with <code>&#8594;</code> operator:</p>
-</div>
-<div class="listingblock data-line-47">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">System.out.println(switch (day) {
-    case MONDAY, FRIDAY, SUNDAY -&gt; 6;
-    case TUESDAY -&gt; 7;
-    case THURSDAY, SATURDAY -&gt; 8;
-    case WEDNESDAY -&gt; 9;
+                <div class="paragraph">
+                    <p>Code example with <code>&#8594;</code> operator:</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#0a8;font-weight:bold">System</span>.out.println(<span
+        style="color:#080;font-weight:bold">switch</span> (day) {
+    <span style="color:#080;font-weight:bold">case</span> MONDAY, FRIDAY, SUNDAY -&gt; <span style="color:#00D">6</span>;
+    <span style="color:#080;font-weight:bold">case</span> TUESDAY -&gt; <span style="color:#00D">7</span>;
+    <span style="color:#080;font-weight:bold">case</span> THURSDAY, SATURDAY -&gt; <span style="color:#00D">8</span>;
+    <span style="color:#080;font-weight:bold">case</span> WEDNESDAY -&gt; <span style="color:#00D">9</span>;
 });</code></pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p><span class="underline"><strong>Notes</strong></span></p>
+                </div>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>you cannot mix <code>yield</code> and the <code>&#8594;</code> operator</p>
+                        </li>
+                        <li>
+                            <p>if you need to write more than one statement per value, you have to use
+                                <code>yield</code></p>
+                        </li>
+                    </ul>
+                </div>
 </div>
 </div>
-<div class="paragraph data-line-48">
-<p><span class="underline"><strong>Notes</strong></span></p>
 </div>
-<div class="ulist data-line-50">
-<ul>
-<li class="data-line-50">
-<p>you cannot mix <code>yield</code> and the <code>&#8594;</code> operator</p>
-</li>
-<li class="data-line-51">
-<p>if you need to write more than one statement per value, you have to use <code>yield</code></p>
-</li>
+    <div class="sect1">
+        <h2 id="_new_features_in_jdk_15">New Features in JDK 15</h2>
+        <div class="sectionbody">
+            <div class="sect2">
+                <h3 id="_text_blocks">Text Blocks</h3>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>added in jdk 13</p>
+                        </li>
+                        <li>
+                            <p>express a multiline String</p>
+                        </li>
+                        <li>
+                            <p>take attention of the position of final <code>"""</code>, the last carriage return count
+                            </p>
+                        </li>
+                        <li>
+                            <p>consider only space after the first character of the first line BUT the closing delimiter
+                                can change that if you put it before the first character.</p>
+                        </li>
+                        <li>
+                            <p>you can use <code>"</code> and <code>""</code> inside the text block</p>
+                        </li>
+                        <li>
+                            <p>you can use <code>"""</code> inside a text block by escaping the at least one
+                                <code>"</code> (ex: <code>\"""</code>)</p>
+                        </li>
+                        <li>
+                            <p>you can add text block by using <code>+</code></p>
+                        </li>
 </ul>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1 data-line-1">
-<h2 id="_new_features_in_jdk_15">New Features in JDK 15</h2>
-<div class="sectionbody">
-<div class="sect2 data-line-4">
-<h3 id="_text_blocks">Text Blocks</h3>
-<div class="ulist data-line-6">
-<ul>
-<li class="data-line-6">
-<p>added in jdk 13</p>
-</li>
-<li class="data-line-7">
-<p>express a multiline String</p>
-</li>
-<li class="data-line-8">
-<p>take attention of the position of final <code>"""</code>, the last carriage return count</p>
-</li>
-<li class="data-line-9">
-<p>consider only space after the first character of the first line BUT the closing delimiter can change that if you put it before the first character.</p>
-</li>
-<li class="data-line-10">
-<p>you can use <code>"</code> and <code>""</code> inside the text block</p>
-</li>
-<li class="data-line-11">
-<p>you can use <code>"""</code> inside a text block by escaping the at least one <code>"</code> (ex: <code>\"""</code>)</p>
-</li>
-<li class="data-line-12">
-<p>you can add text block by using <code>+</code></p>
-</li>
-</ul>
-</div>
-<div class="paragraph data-line-14">
-<p>Example code with String :</p>
-</div>
-<div class="listingblock data-line-5">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">String html = "&lt;html&gt;\n" +
-        "    &lt;body&gt;\n" +
-        "        &lt;p&gt;Hello, world&lt;/p&gt;\n" +
-        "    &lt;/body&gt;\n" +
-        "&lt;/html&gt;\n";</code></pre>
-</div>
-</div>
-<div class="paragraph data-line-21">
-<p>Example code with TextBlock :</p>
-</div>
-<div class="listingblock data-line-29">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">String html = """
+                <div class="paragraph">
+                    <p>Example code with String :</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span
+        style="color:#0a8;font-weight:bold">String</span> html = <span
+        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">&lt;html&gt;</span><span
+        style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> +
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                style="color:#D20">    &lt;body&gt;</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> +
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                style="color:#D20">        &lt;p&gt;Hello, world&lt;/p&gt;</span><span style="color:#b0b">\n</span><span
+                style="color:#710">&quot;</span></span> +
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                style="color:#D20">    &lt;/body&gt;</span><span style="color:#b0b">\n</span><span style="color:#710">&quot;</span></span> +
+        <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                style="color:#D20">&lt;/html&gt;</span><span style="color:#b0b">\n</span><span
+                style="color:#710">&quot;</span></span>;</code></pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Example code with TextBlock :</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span
+        style="color:#0a8;font-weight:bold">String</span> html = <span
+        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span><span
+        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">
         &lt;html&gt;
             &lt;body&gt;
                 &lt;p&gt;Hello, world&lt;/p&gt;
             &lt;/body&gt;
         &lt;/html&gt;
-        """;</code></pre>
-</div>
-</div>
-<div class="paragraph data-line-28">
-<p>Formated String :</p>
-</div>
-<div class="listingblock data-line-16">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">String name = "toto";
-String type = "type";
-String.format("{"+
-              "\"type\":\"%s\"," +
-              "\"name\":\"%s\"" +
-              "}",
+        </span><span style="color:#710">&quot;</span></span><span style="background-color:hsla(0,100%,50%,0.05)"><span
+        style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span>;</code></pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Formated String :</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span
+        style="color:#0a8;font-weight:bold">String</span> name = <span
+        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">toto</span><span
+        style="color:#710">&quot;</span></span>;
+<span style="color:#0a8;font-weight:bold">String</span> type = <span
+            style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">type</span><span style="color:#710">&quot;</span></span>;
+<span style="color:#0a8;font-weight:bold">String</span>.format(<span
+            style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">{</span><span style="color:#710">&quot;</span></span>+
+              <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                      style="color:#b0b">\&quot;</span><span style="color:#D20">type</span><span style="color:#b0b">\&quot;</span><span
+                      style="color:#D20">:</span><span style="color:#b0b">\&quot;</span><span
+                      style="color:#D20">%s</span><span style="color:#b0b">\&quot;</span><span
+                      style="color:#D20">,</span><span style="color:#710">&quot;</span></span> +
+              <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                      style="color:#b0b">\&quot;</span><span style="color:#D20">name</span><span style="color:#b0b">\&quot;</span><span
+                      style="color:#D20">:</span><span style="color:#b0b">\&quot;</span><span
+                      style="color:#D20">%s</span><span style="color:#b0b">\&quot;</span><span
+                      style="color:#710">&quot;</span></span> +
+              <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+                      style="color:#D20">}</span><span style="color:#710">&quot;</span></span>,
 type, name);</code></pre>
-</div>
-</div>
-<div class="paragraph data-line-35">
-<p>Formated TextBlock :</p>
-</div>
-<div class="listingblock data-line-41">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">String name = "toto";
-String type = "type";
-"""
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Formated TextBlock :</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span
+        style="color:#0a8;font-weight:bold">String</span> name = <span
+        style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#D20">toto</span><span
+        style="color:#710">&quot;</span></span>;
+<span style="color:#0a8;font-weight:bold">String</span> type = <span
+            style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">type</span><span style="color:#710">&quot;</span></span>;
+<span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span style="color:#710">&quot;</span></span><span
+            style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">
                 {
-                  "type": "%s",
-                  "name": "%s"
-                }""".formatted(type, name);</code></pre>
+                  </span><span style="color:#710">&quot;</span></span>type<span
+            style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">: </span><span style="color:#710">&quot;</span></span>%s<span
+            style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">,
+                  </span><span style="color:#710">&quot;</span></span>name<span
+            style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">: </span><span style="color:#710">&quot;</span></span>%s<span
+            style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#D20">
+                }</span><span style="color:#710">&quot;</span></span><span
+            style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">&quot;</span><span
+            style="color:#710">&quot;</span></span>.formatted(type, name);</code></pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p><span class="underline"><strong>NOTES</strong></span></p>
+                </div>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>IntelliJ show the final indentation</p>
+                        </li>
+                        <li>
+                            <p>More examples here : <a href="https://openjdk.java.net/jeps/378" class="bare">https://openjdk.java.net/jeps/378</a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
 </div>
-</div>
-<div class="paragraph data-line-43">
-<p><span class="underline"><strong>NOTES</strong></span></p>
-</div>
-<div class="ulist data-line-45">
-<ul>
-<li class="data-line-45">
-<p>IntelliJ show the final indentation</p>
-</li>
-<li class="data-line-46">
-<p>More examples here : <a href="https://openjdk.java.net/jeps/378" class="bare">https://openjdk.java.net/jeps/378</a></p>
-</li>
+            <div class="sect2">
+                <h3 id="_records_second_preview">Records (second preview)</h3>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>added in jdk 14</p>
+                        </li>
+                        <li>
+                            <p>Data class &#8658; immutable</p>
+                        </li>
+                        <li>
+                            <p>add possibility to declare a record locally</p>
+                        </li>
+                        <li>
+                            <p>allow annotation on fields in the constructor</p>
+                        </li>
+                        <li>
+                            <p>can override automatically generated method</p>
+                        </li>
+                        <li>
+                            <p>can add new methods</p>
+                        </li>
 </ul>
 </div>
-</div>
-<div class="sect2 data-line-48">
-<h3 id="_records_second_preview">Records (second preview)</h3>
-<div class="ulist data-line-50">
-<ul>
-<li class="data-line-50">
-<p>added in jdk 14</p>
-</li>
-<li class="data-line-51">
-<p>Data class &#8658; immutable</p>
-</li>
-<li class="data-line-52">
-<p>add possibility to declare a record locally</p>
-</li>
-<li class="data-line-53">
-<p>allow annotation on fields in the constructor</p>
-</li>
-<li class="data-line-54">
-<p>can override automatically generated method</p>
-</li>
-<li class="data-line-55">
-<p>can add new methods</p>
-</li>
-</ul>
-</div>
-<div class="paragraph data-line-57">
-<p>Example :</p>
-</div>
-<div class="listingblock data-line-6">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public record Person(String name, String surname, LocalDate birthday) {
+                <div class="paragraph">
+                    <p>Example :</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">public</span> record Person(<span
+        style="color:#0a8;font-weight:bold">String</span> name, <span style="color:#0a8;font-weight:bold">String</span> surname, LocalDate birthday) {
 
-    public int calculateAge(LocalDate today) {
-        return Period.between(birthday, today).getYears();
+    <span style="color:#088;font-weight:bold">public</span> <span style="color:#339;font-weight:bold">int</span> calculateAge(LocalDate today) {
+        <span style="color:#080;font-weight:bold">return</span> Period.between(birthday, today).getYears();
     }
 }</code></pre>
+                    </div>
+                </div>
 </div>
-</div>
-</div>
-<div class="sect2 data-line-64">
-<h3 id="_pattern_matching_instanceof_second_preview">Pattern Matching instanceof (second preview)</h3>
-<div class="ulist data-line-66">
-<ul>
-<li class="data-line-66">
-<p>added in jdk 14</p>
-</li>
-<li class="data-line-67">
-<p>direct cast (remove the need of an explicit cast after the <code>if</code> statement)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph data-line-69">
-<p>Code example before :</p>
-</div>
-<div class="listingblock data-line-5">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">if (obj instanceof String) {
-    String s = (String) obj;
-    System.out.println(s.length());
+            <div class="sect2">
+                <h3 id="_pattern_matching_instanceof_second_preview">Pattern Matching instanceof (second preview)</h3>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>added in jdk 14</p>
+                        </li>
+                        <li>
+                            <p>direct cast (remove the need of an explicit cast after the <code>if</code> statement)</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="paragraph">
+                    <p>Code example before :</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">if</span> (obj <span
+        style="color:#080;font-weight:bold">instanceof</span> <span style="color:#0a8;font-weight:bold">String</span>) {
+    <span style="color:#0a8;font-weight:bold">String</span> s = (<span style="color:#0a8;font-weight:bold">String</span>) obj;
+    <span style="color:#0a8;font-weight:bold">System</span>.out.println(s.length());
 }</code></pre>
-</div>
-</div>
-<div class="paragraph data-line-76">
-<p>Code example after :</p>
-</div>
-<div class="listingblock data-line-14">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">if (obj instanceof String s) {
-    System.out.println(s.length());
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Code example after :</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#080;font-weight:bold">if</span> (obj <span
+        style="color:#080;font-weight:bold">instanceof</span> <span style="color:#0a8;font-weight:bold">String</span> s) {
+    <span style="color:#0a8;font-weight:bold">System</span>.out.println(s.length());
 }</code></pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p><span class="underline"><strong>NOTES</strong></span></p>
+                </div>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>Valid only in the <code>true</code> block of an <code>if else</code> declaration</p>
+                        </li>
+                    </ul>
+                </div>
 </div>
-</div>
-<div class="paragraph data-line-83">
-<p><span class="underline"><strong>NOTES</strong></span></p>
-</div>
-<div class="ulist data-line-85">
-<ul>
-<li class="data-line-85">
-<p>Valid only in the <code>true</code> block of an <code>if else</code> declaration</p>
-</li>
+            <div class="sect2">
+                <h3 id="_sealed_classes_preview">Sealed Classes (preview)</h3>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>prevent class extension but not superclass usage</p>
+                        </li>
+                        <li>
+                            <p>extension is limited to a bunch of selected/declared classes</p>
+                        </li>
+                        <li>
+                            <p>works for interfaces too</p>
+                        </li>
 </ul>
 </div>
-</div>
-<div class="sect2 data-line-87">
-<h3 id="_sealed_classes_preview">Sealed Classes (preview)</h3>
-<div class="ulist data-line-89">
-<ul>
-<li class="data-line-89">
-<p>prevent class extension but not superclass usage</p>
-</li>
-<li class="data-line-90">
-<p>extension is limited to a bunch of selected/declared classes</p>
-</li>
-<li class="data-line-91">
-<p>works for interfaces too</p>
-</li>
-</ul>
-</div>
-<div class="paragraph data-line-93">
-<p>Base Class :</p>
-</div>
-<div class="listingblock data-line-3">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public abstract sealed class Shape
+                <div class="paragraph">
+                    <p>Base Class :</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">public</span> <span
+        style="color:#088;font-weight:bold">abstract</span> sealed <span
+        style="color:#339;font-weight:bold">class</span> <span style="color:#B06;font-weight:bold">Shape</span>
         permits net.bakaar.jdk.demo.hidden.Circle {
 
 }</code></pre>
-</div>
-</div>
-<div class="paragraph data-line-100">
-<p>Extending Class :</p>
-</div>
-<div class="listingblock data-line-3">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">public final class Circle extends Shape {
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p>Extending Class :</p>
+                </div>
+                <div class="listingblock">
+                    <div class="content">
+<pre class="CodeRay highlight"><code data-lang="java"><span style="color:#088;font-weight:bold">public</span> <span
+        style="color:#088;font-weight:bold">final</span> <span style="color:#339;font-weight:bold">class</span> <span
+        style="color:#B06;font-weight:bold">Circle</span> <span style="color:#088;font-weight:bold">extends</span> <span
+        style="color:#0a8;font-weight:bold">Shape</span> {
 }</code></pre>
+                    </div>
+                </div>
+                <div class="paragraph">
+                    <p><span class="underline"><strong>NOTES</strong></span></p>
+                </div>
+                <div class="ulist">
+                    <ul>
+                        <li>
+                            <p>the extending class need to be final (logical !)</p>
+                        </li>
+                        <li>
+                            <p>More info here : <a href="https://openjdk.java.net/jeps/360" class="bare">https://openjdk.java.net/jeps/360</a>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
 </div>
 </div>
-<div class="paragraph data-line-107">
-<p><span class="underline"><strong>NOTES</strong></span></p>
 </div>
-<div class="ulist data-line-109">
-<ul>
-<li class="data-line-109">
-<p>the extending class need to be final (logical !)</p>
-</li>
-<li class="data-line-110">
-<p>More info here : <a href="https://openjdk.java.net/jeps/360" class="bare">https://openjdk.java.net/jeps/360</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1 data-line-1">
-<h2 id="_new_features_in_jdk_16">New Features in JDK 16</h2>
-<div class="sectionbody">
-<div class="sect2 data-line-4">
-<h3 id="_record">Record</h3>
-<div class="paragraph data-line-6">
-<p>Should be final</p>
-</div>
-</div>
-<div class="sect2 data-line-8">
-<h3 id="_pattern_matching_for_instanceof">Pattern matching for instanceof</h3>
-<div class="paragraph data-line-10">
-<p>Should be final</p>
-</div>
-</div>
-<div class="sect2 data-line-12">
-<h3 id="_sealed_classes">Sealed Classes</h3>
-<div class="paragraph data-line-14">
-<p>Second Preview</p>
-</div>
-</div>
-<div class="sect2 data-line-16">
-<h3 id="_vector_api_incubating">Vector API (incubating)</h3>
-<div class="paragraph data-line-11">
-<p>Vactor Calcultation ability</p>
-</div>
-</div>
+    <div class="sect1">
+        <h2 id="_new_features_in_jdk_16">New Features in JDK 16</h2>
+        <div class="sectionbody">
+            <div class="sect2">
+                <h3 id="_record">Record</h3>
+                <div class="paragraph">
+                    <p>Should be final</p>
+                </div>
+            </div>
+            <div class="sect2">
+                <h3 id="_pattern_matching_for_instanceof">Pattern matching for instanceof</h3>
+                <div class="paragraph">
+                    <p>Should be final</p>
+                </div>
+            </div>
+            <div class="sect2">
+                <h3 id="_sealed_classes">Sealed Classes</h3>
+                <div class="paragraph">
+                    <p>Second Preview</p>
+                </div>
+            </div>
+            <div class="sect2">
+                <h3 id="_vector_api_incubating">Vector API (incubating)</h3>
+                <div class="paragraph">
+                    <p>Vector Calcultation ability</p>
+                </div>
+            </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-01-25 19:23:28 +0100
+    Last updated 2021-02-10 11:33:49 +0100
 </div>
 </div>
 </body>

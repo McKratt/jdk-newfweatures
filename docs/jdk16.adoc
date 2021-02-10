@@ -15,4 +15,4 @@ Second Preview
 
 === Vector API (incubating)
 
-Vactor Calcultation ability
+Vector Calcultation ability
